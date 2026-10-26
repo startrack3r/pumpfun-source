@@ -212,6 +212,7 @@ def outer(output):
         require(image in image_row['RepoDigests'], 'Pulled image digest differs')
         def phase(name, network):
             return commands.run('container-' + name, ['docker', 'run', '--rm', '--network', network, '--read-only',
+                '--user', str(os.getuid()) + ':' + str(os.getgid()),
                 '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--tmpfs', '/tmp:rw,exec,nosuid,nodev,size=1g',
                 '--mount', 'type=bind,source=' + str(root) + ',target=/gate',
                 '--mount', 'type=bind,source=' + str(source) + ',target=/gate/input/source,readonly',

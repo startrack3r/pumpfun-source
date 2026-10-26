@@ -2,7 +2,9 @@ name: Metaplex isolated compiler observation
 on:
   push:
     branches: [startrack3r/metaplex-compiler-observation-ci]
-    paths: [.github/workflows/verify.yml]
+    paths:
+      - .github/workflows/verify.yml
+      - research/metaplex-image-bootstrap/installed/**
   workflow_dispatch:
 permissions:
   contents: read
@@ -10,26 +12,34 @@ concurrency:
   group: metaplex-compiler-observation
   cancel-in-progress: false
 jobs:
-  runner-preflight:
+  installed-compiler:
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 20
     steps:
-      - name: Check supported isolated runner capabilities
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            .github/workflows
+            research/metaplex-image-bootstrap/installed
+      - name: Check archive and loader-trace guards
+        run: python3 -B research/metaplex-image-bootstrap/installed/test_observe.py
+      - name: Observe fresh authenticated compiler with container network disabled
+        run: >-
+          python3 -B research/metaplex-image-bootstrap/installed/observe.py
+          --output "$RUNNER_TEMP/metaplex-installed"
+      - name: Retain executed workflow and source revision
+        if: always()
         shell: bash
         run: |
-          set -euo pipefail
-          mkdir evidence
-          {
-            printf 'repository=%s\ncommit=%s\n' "$GITHUB_REPOSITORY" "$GITHUB_SHA"
-            uname -m
-            python3 --version
-            docker version --format '{{json .Server}}'
-          } > evidence/runner-preflight.txt
-      - name: Retain observed runner capabilities
+          mkdir -p "$RUNNER_TEMP/metaplex-installed/evidence"
+          cp .github/workflows/verify.yml "$RUNNER_TEMP/metaplex-installed/evidence/executed-workflow.yml"
+          git rev-parse HEAD > "$RUNNER_TEMP/metaplex-installed/evidence/source-commit.txt"
+      - name: Retain actual success or failure
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: metaplex-runner-preflight-${{ github.run_id }}-${{ github.run_attempt }}
-          path: evidence
+          name: metaplex-installed-compiler-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/metaplex-installed/evidence
           if-no-files-found: error
           retention-days: 30

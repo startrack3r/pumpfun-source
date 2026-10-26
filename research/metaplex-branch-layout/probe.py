@@ -156,13 +156,15 @@ def main():
         run('llc-libraries', ['docker', 'exec', name, 'ldd', TOOLS + '/llvm/bin/llc'])
         for variant in inputs():
             arguments = ['-mtriple=sbf', '-mcpu=generic', '-mattr=+solana', '-O3', '-filetype=obj',
-                '-print-isel-input', '-print-before=finalize-isel',
+                '-print-isel-input', '-print-before=finalize-isel,branch-folder',
                 '-print-after=branch-folder,block-placement,sbf-mi-pemit-peephole',
                 '/input/ir/' + variant + '.ll', '-o', '/tmp/' + variant + '.o']
             run(variant + '-compile', ['docker', 'exec', name, TOOLS + '/llvm/bin/llc', *arguments])
             run(variant + '-disassembly', ['docker', 'exec', name, TOOLS + '/llvm/bin/llvm-objdump',
                                          '-dr', '/tmp/' + variant + '.o'])
-            run(variant + '-copy', ['docker', 'cp', name + ':/tmp/' + variant + '.o', str(evidence / (variant + '.o'))])
+            raw, _, _ = run(variant + '-read-object', ['docker', 'exec', name, 'cat', '/tmp/' + variant + '.o'])
+            require(raw.startswith(b'\x7fELF'), 'Missing ELF object bytes')
+            (evidence / (variant + '.o')).write_bytes(raw)
         state['status'] = 'COMPILED'
     except Exception as error:
         state.update(status='FAILED', error_type=type(error).__name__, error=str(error))

@@ -1,0 +1,29 @@
+--- a/programs/pump-fees/src/types.rs
++++ b/programs/pump-fees/src/types.rs
+@@ -58,19 +58,20 @@
+ impl AccountDeserialize for FeeConfig {
+     fn try_deserialize(buf: &mut &[u8]) -> Result<Self> {
+         use anchor_lang::Discriminator;
+-        if buf.len() < 8 || &buf[..8] != Self::DISCRIMINATOR { return Err(ProgramError::InvalidAccountData.into()); }
+-        Self::try_deserialize_unchecked(buf)
++        if buf.len() < 8 { return Err(ProgramError::InvalidAccountData.into()); }
++        if &buf[..8] != Self::DISCRIMINATOR { return Err(ProgramError::InvalidAccountData.into()); }
++        Self::try_deserialize_unchecked(&mut &buf[8..])
+     }
+     fn try_deserialize_unchecked(buf: &mut &[u8]) -> Result<Self> {
+-        if buf.len() < 2512 { return Err(ProgramError::InvalidAccountData.into()); }
+-        let mut data = &buf[8..];
++        if buf.len() < 2504 { return Err(ProgramError::InvalidAccountData.into()); }
++        let mut data = *buf;
+         let decode = (|| -> std::io::Result<Self> {
+             let bump = u8::deserialize(&mut data)?;
+             let admin = Pubkey::deserialize(&mut data)?;
+             let flat_fees = Fees::deserialize(&mut data)?;
+             let fee_tiers = Vec::<FeeTier>::deserialize(&mut data)?;
+-            let stable_fee_tiers = if buf.len() >= 4073 { Vec::<FeeTier>::deserialize(&mut data)? } else { vec![] };
+-            let exotic_flat_fees = if buf.len() >= 4097 { Fees::deserialize(&mut data)? } else { Fees { lp_fee_bps: 0, protocol_fee_bps: 0, creator_fee_bps: 0 } };
++            let stable_fee_tiers = if buf.len() >= 4065 { Vec::<FeeTier>::deserialize(&mut data)? } else { vec![] };
++            let exotic_flat_fees = if buf.len() >= 4089 { Fees::deserialize(&mut data)? } else { Fees { lp_fee_bps: 0, protocol_fee_bps: 0, creator_fee_bps: 0 } };
+             Ok(Self { bump, admin, flat_fees, fee_tiers, stable_fee_tiers, exotic_flat_fees })
+         })();
+         decode.map_err(|e| ProgramError::BorshIoError(e.to_string()).into())

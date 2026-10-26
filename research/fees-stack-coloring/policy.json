@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "scope": "Observe stack coloring and final frame layout of the already-built PR75 body-direct variant; no new source hypothesis",
+  "source": {
+    "branch": "main",
+    "revision": "58519a8e601ed17bc6d931483686a08ee656233d",
+    "manifest": "programs/pump-fees/Cargo.toml",
+    "library": "pump_fees_candidate.so",
+    "tracked_input_count": 26,
+    "archive_sha256": "66b44500d1748c153d5dd96b1e48bd69088b961f51e44c37cd5cf3465f69b94c",
+    "override_revision": "5f8f2aef2a70e43642e65e10d1db3e7476a533d6",
+    "override_path": "research/fees-guard-experiment/sources/body-direct-types.rs"
+  },
+  "elf": {
+    "class": 2,
+    "data": 1,
+    "type": 3,
+    "machine": 263,
+    "machine_name": "EM_SBF"
+  },
+  "container": {
+    "image": "solanafoundation/solana-verifiable-build@sha256:6c73adc767ee7ff212f2532d4695472b12f3d4ac20aea3db22b89d8c614dac50",
+    "platform": "linux/amd64",
+    "role": "Pinned Linux x86_64 host shell only; it does not select the SBF compiler or stripper"
+  },
+  "compile": {
+    "version": "v1.44",
+    "target": "sbf-solana-solana",
+    "archive_url": "https://github.com/anza-xyz/platform-tools/releases/download/v1.44/platform-tools-linux-x86_64.tar.bz2",
+    "archive_bytes": 490710349,
+    "archive_sha256": "6719b889d60677a8a2fcf4c82f68441a1afe0ab093edd2efe9f84a67a808b3e9",
+    "selected_sha256": {
+      "rust/bin/rustc": "c8807b7ebede8578ac5a257ea333780f9d89bd356064fd8184af7e996cb71a97",
+      "rust/bin/cargo": "d28444578306fe5a4f40524331411340123004e9e6556322fcabdbe351fe265d"
+    },
+    "baseline_target_rustflags": "-Zremap-cwd-prefix=",
+    "release_strip": "debuginfo"
+  },
+  "strip": {
+    "version": "v1.52",
+    "archive_url": "https://github.com/anza-xyz/platform-tools/releases/download/v1.52/platform-tools-linux-x86_64.tar.bz2",
+    "archive_bytes": 519270959,
+    "archive_sha256": "8b3861e93daf085ec12b65c4fac374d9bec4587a3de16871da6b08ab0c1d907e",
+    "objcopy_sha256": "673b3b86f0b1b8eadd755e29e2f66a7582248ef3bda7a267fbb370b733c1cb69",
+    "arguments": [
+      "--strip-all"
+    ]
+  },
+  "proposal": {
+    "repository": "lalalune/pumpfun-source",
+    "pr": 75,
+    "commit": "5f8f2aef2a70e43642e65e10d1db3e7476a533d6",
+    "path": "research/fees-guard-experiment/sources/body-direct.patch",
+    "sha256": "55716271467d028777d6ed059ee66de3278ab4f5149001c18dcef2c4379782ab"
+  },
+  "expected": {
+    "stripped": {
+      "bytes": 863904,
+      "sha256": "53ae09c42283b3d96bf4d9c9cff42f6f3989b6c7bccca3ca15b0fb25aaacec3b"
+    },
+    "unstripped": {
+      "bytes": 1238288,
+      "sha256": "336de06b76de9a3c14763ff2022b0ed2a670613f1041085705f06f96c3fe3fc0"
+    }
+  }
+}

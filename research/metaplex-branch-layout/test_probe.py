@@ -28,6 +28,13 @@ class InputTests(unittest.TestCase):
         self.assertEqual(probe.ARCHIVE_SHA, '8d5153589dbe19635affe937663cf4555a7e69a62d91ab4a1df064aaa8d5f066')
         self.assertTrue(probe.IMAGE.endswith('@sha256:43206149a565ec35da95b1a909f4714f5d5f0d8241c31df24189e517acd18467'))
 
+    def test_tar_dot_prefix_is_not_a_different_member(self):
+        self.assertEqual(probe.member_path('./llvm/bin/llc'), 'llvm/bin/llc')
+        self.assertEqual(probe.member_path('version.md'), 'version.md')
+        for name in ('../llc', '/llc', 'llvm\\llc'):
+            with self.assertRaises(ValueError):
+                probe.member_path(name)
+
 
 if __name__ == '__main__':
     unittest.main()

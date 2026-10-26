@@ -1,6 +1,6 @@
 """Compile two small block-order variants with pinned v1.37 llc, offline in Docker."""
 from datetime import datetime, timezone
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import argparse
 import hashlib
 import json
@@ -29,6 +29,13 @@ def sha(raw):
 
 def save(path, value):
     path.write_text(json.dumps(value, indent=2) + '\n', encoding='utf-8', newline='\n')
+
+
+def member_path(name):
+    path = PurePosixPath(name)
+    require(not path.is_absolute() and '..' not in path.parts and '\\' not in name,
+            'Nonrelative archive member')
+    return path.as_posix()
 
 
 def inputs():
@@ -115,12 +122,15 @@ def main():
         selected = {}
         with tarfile.open(archive, 'r|bz2') as tar:
             for member in tar:
-                if member.name in ('llvm/bin/llc', 'llvm/bin/llvm-objdump', 'version.md'):
+                path = member_path(member.name)
+                if path in ('llvm/bin/llc', 'llvm/bin/llvm-objdump', 'version.md'):
                     require(member.isfile(), 'Nonregular selected member')
+                    require(path not in selected, 'Duplicate selected member')
                     raw = tar.extractfile(member).read()
-                    selected[member.name] = dict(bytes=len(raw), sha256=sha(raw))
-                    if member.name == 'version.md':
+                    selected[path] = dict(bytes=len(raw), sha256=sha(raw), archive_member=member.name)
+                    if path == 'version.md':
                         (evidence / 'version.md').write_bytes(raw)
+        save(evidence / 'selected-members.json', selected)
         require(set(selected) == {'llvm/bin/llc', 'llvm/bin/llvm-objdump', 'version.md'}, 'Missing tools')
         save(evidence / 'archive.json', dict(url=URL, bytes=ARCHIVE_BYTES, sha256=digest, selected=selected))
         run('pull-image', ['docker', 'pull', '--platform', 'linux/amd64', IMAGE], timeout=600)
@@ -137,7 +147,8 @@ def main():
         run('mkdir', ['docker', 'exec', name, 'mkdir', '-p', TOOLS])
         # Only three digest-bound regular members are extracted into the disposable tmpfs.
         run('install', ['docker', 'exec', name, 'tar', '--no-same-owner', '--no-same-permissions',
-            '-xjf', '/input/platform.tar.bz2', '-C', TOOLS, *selected], timeout=300)
+            '-xjf', '/input/platform.tar.bz2', '-C', TOOLS,
+            *[row['archive_member'] for row in selected.values()]], timeout=300)
         for i, (path, identity) in enumerate(selected.items()):
             raw, _, _ = run(f'installed-{i}', ['docker', 'exec', name, 'sha256sum', TOOLS + '/' + path])
             require(raw.decode().split()[0] == identity['sha256'], 'Installed member changed')

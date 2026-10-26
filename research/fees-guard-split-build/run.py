@@ -193,7 +193,8 @@ def outer(output):
         for kind, version in [('compile', 'v1.44'), ('strip', 'v1.52')]:
             spec = policy[kind]; archive = root / (version + '.tar.bz2')
             commands.run('download-' + version, ['curl', '--fail', '--location', '--connect-timeout', '30',
-                '--max-time', '600', '--output', str(archive), spec['archive_url']], timeout=650)
+                '--max-time', '600', '--retry', '3', '--retry-delay', '5', '--retry-max-time', '900',
+                '--output', str(archive), spec['archive_url']], timeout=1550)
             require(raw_record(archive) == dict(bytes=spec['archive_bytes'], sha256=spec['archive_sha256']), 'Wrong tool archive')
             destination = root / 'run/toolchains' / version; destination.mkdir()
             # The archive is fully hash-bound first. Python's data filter confines links and rejects special files.

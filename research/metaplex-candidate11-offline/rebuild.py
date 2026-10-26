@@ -188,6 +188,11 @@ def main():
         stdout, _, _ = run('inspect-image', ['docker', 'image', 'inspect', IMAGE])
         image, = json.loads(stdout)
         require(image['Id'] == IMAGE_ID and IMAGE in image['RepoDigests'], 'Pinned image differs')
+        # With all capabilities dropped, container root cannot override host UID
+        # permissions. Change ownership only of this fresh experiment's public
+        # source/cache mounts; no checkout, home directory or credentials are mounted.
+        run('prepare-container-ownership', ['sudo', '--non-interactive', 'chown', '-R', '0:0',
+            str(source), str(out / 'registry'), str(out / 'git-cache')])
         mounts = ['--mount', f'type=bind,source={source},target=/build',
                   '--mount', f'type=bind,source={out / "registry"},target=/usr/local/cargo/registry',
                   '--mount', f'type=bind,source={out / "git-cache"},target=/usr/local/cargo/git']
@@ -202,9 +207,10 @@ def main():
         rooster, = list((out / 'git-cache/checkouts').glob('rooster-*/*/Cargo.toml'))
         git_sources = [p for p in lock['package'] if p.get('source', '').startswith('git+')]
         require(len(git_sources) == 1 and git_sources[0]['name'] == 'rooster', 'Unexpected Git dependency')
-        stdout, _, _ = run('git-dependency-revision', ['git', '-C', str(rooster.parent), 'rev-parse', 'HEAD'])
+        git_dependency = ['git', '-c', 'safe.directory=' + str(rooster.parent), '-C', str(rooster.parent)]
+        stdout, _, _ = run('git-dependency-revision', git_dependency + ['rev-parse', 'HEAD'])
         require(stdout.strip() == git_sources[0]['source'].split('#')[1], 'Git dependency revision differs')
-        run('git-dependency-clean', ['git', '-C', str(rooster.parent), 'diff', '--exit-code', 'HEAD'])
+        run('git-dependency-clean', git_dependency + ['diff', '--exit-code', 'HEAD'])
         start_attempted = True
         stdout, _, _ = run('start-offline-build-container', base + mounts + [
             '--detach', '--name', container_name, '--network', 'none',

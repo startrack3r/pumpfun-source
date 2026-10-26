@@ -15,7 +15,6 @@ import re
 import subprocess
 import sys
 import tarfile
-import urllib.request
 import uuid
 
 IMAGE = 'solanafoundation/solana-verifiable-build@sha256:43206149a565ec35da95b1a909f4714f5d5f0d8241c31df24189e517acd18467'
@@ -140,10 +139,10 @@ def main():
 
     try:
         archive_path = downloads / 'platform-tools-linux-x86_64.tar.bz2'
-        with urllib.request.urlopen(urllib.request.Request(ARCHIVE_URL,
-                headers={'User-Agent': 'startrack3r-metaplex-provenance'}), timeout=90) as response, archive_path.open('xb') as out:
-            while raw := response.read(1024 * 1024):
-                out.write(raw)
+        # Preserve transfer diagnostics, including transient failures, before auditing bytes.
+        run('download-archive', ['curl', '--fail', '--location', '--retry', '2',
+            '--retry-all-errors', '--connect-timeout', '30', '--max-time', '300',
+            '--output', str(archive_path), ARCHIVE_URL], timeout=1000)
         inventory, selected = audit_archive(archive_path)
         (evidence / 'archive-inventory.json.gz').write_bytes(gzip.compress(
             (json.dumps(inventory, separators=(',', ':')) + '\n').encode(), mtime=0))

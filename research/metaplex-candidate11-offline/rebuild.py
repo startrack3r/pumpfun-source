@@ -204,10 +204,11 @@ def main():
             IMAGE, 'cargo', 'fetch', '--locked', '--manifest-path', MANIFEST], timeout=900)
         check_source(source, patched)
         save(evidence / 'registry-archives.json.gz', registry_archives(out / 'registry', lock))
-        rooster, = list((out / 'git-cache/checkouts').glob('rooster-*/*/Cargo.toml'))
+        rooster_manifest, = list((out / 'git-cache/checkouts').glob('rooster-*/*/program/Cargo.toml'))
+        rooster = rooster_manifest.parents[1]
         git_sources = [p for p in lock['package'] if p.get('source', '').startswith('git+')]
         require(len(git_sources) == 1 and git_sources[0]['name'] == 'rooster', 'Unexpected Git dependency')
-        git_dependency = ['git', '-c', 'safe.directory=' + str(rooster.parent), '-C', str(rooster.parent)]
+        git_dependency = ['git', '-c', 'safe.directory=' + str(rooster), '-C', str(rooster)]
         stdout, _, _ = run('git-dependency-revision', git_dependency + ['rev-parse', 'HEAD'])
         require(stdout.strip() == git_sources[0]['source'].split('#')[1], 'Git dependency revision differs')
         run('git-dependency-clean', git_dependency + ['diff', '--exit-code', 'HEAD'])

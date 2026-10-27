@@ -1,0 +1,2057 @@
+{
+  "method_counts": {
+    "darwin": {
+      "candidate_functions": 118,
+      "any_instruction_and_relocation_matches": 106,
+      "unique_inferred_entry_matches": 66,
+      "entry_bounded_call_consistent_matches": 106,
+      "entry_bounded_raw_exact_matches": 18
+    },
+    "linux": {
+      "candidate_functions": 118,
+      "any_instruction_and_relocation_matches": 108,
+      "unique_inferred_entry_matches": 66,
+      "entry_bounded_call_consistent_matches": 108,
+      "entry_bounded_raw_exact_matches": 23
+    }
+  },
+  "distinct_raw_capture_ranges": {
+    "darwin": 18,
+    "linux": 23,
+    "gained": [
+      [
+        599768,
+        40
+      ],
+      [
+        666624,
+        40
+      ],
+      [
+        697904,
+        80
+      ],
+      [
+        697984,
+        5128
+      ],
+      [
+        703896,
+        2008
+      ]
+    ],
+    "lost": []
+  },
+  "raw_gain_families": [
+    {
+      "symbol_family": [
+        "_ZN17compiler_builtins3int19specialized_div_rem12u128_div_remE"
+      ],
+      "linux_symbols": [
+        {
+          "names": [
+            "_ZN17compiler_builtins3int19specialized_div_rem12u128_div_rem17h79f8b203ef37c50bE"
+          ],
+          "start": 529880,
+          "bytes": 5128,
+          "raw_sha256": "ddae507f1e2f9fcbc52f7ef4f3ba69a9301602c222fe5e5d488200b6ea3ca375"
+        }
+      ],
+      "darwin_symbols": [
+        {
+          "names": [
+            "_ZN17compiler_builtins3int19specialized_div_rem12u128_div_rem17h943aa2534fbc5412E"
+          ],
+          "start": 529800,
+          "bytes": 5128,
+          "raw_sha256": "cd5be25ef25a22e2e8f5c9b60ec3fd32c4328bce596a6e789fee0762c96e3020"
+        }
+      ],
+      "captured_windows": [
+        {
+          "file_offset": 697984,
+          "bytes": 5128,
+          "sha256": "ddae507f1e2f9fcbc52f7ef4f3ba69a9301602c222fe5e5d488200b6ea3ca375",
+          "address": 697984,
+          "end_address": 703112,
+          "next_inferred_entry": 703112,
+          "start_evidence": {
+            "direct_calls": [
+              {
+                "caller_address": 697952,
+                "caller_file_offset": 697952,
+                "instruction_hex": "8510000003000000",
+                "signed_displacement": 3
+              }
+            ],
+            "relocated_code_pointers": []
+          },
+          "end_evidence": {
+            "direct_calls": [
+              {
+                "caller_address": 651744,
+                "caller_file_offset": 651744,
+                "instruction_hex": "8510000014190000",
+                "signed_displacement": 6420
+              },
+              {
+                "caller_address": 652128,
+                "caller_file_offset": 652128,
+                "instruction_hex": "85100000e4180000",
+                "signed_displacement": 6372
+              }
+            ],
+            "relocated_code_pointers": []
+          },
+          "complete_inferred_window": true,
+          "loader_relocation_overlaps": []
+        }
+      ],
+      "cross_host_deltas": [
+        {
+          "linux_start": 529880,
+          "darwin_start": 529800,
+          "different_byte_offsets": [
+            2108,
+            2148,
+            2149,
+            2212,
+            2213,
+            2268,
+            2269,
+            2652,
+            2653,
+            2836,
+            2956,
+            2996,
+            3068,
+            4212,
+            4213,
+            4284,
+            4285
+          ],
+          "only_internal_call_displacements": true,
+          "changed_instructions": [
+            {
+              "offset": 2104,
+              "darwin_hex": "8510000057030000",
+              "linux_hex": "8510000002030000"
+            },
+            {
+              "offset": 2144,
+              "darwin_hex": "8510000052030000",
+              "linux_hex": "85100000fd020000"
+            },
+            {
+              "offset": 2208,
+              "darwin_hex": "85100000e0020000",
+              "linux_hex": "851000000b030000"
+            },
+            {
+              "offset": 2264,
+              "darwin_hex": "85100000d9020000",
+              "linux_hex": "8510000004030000"
+            },
+            {
+              "offset": 2648,
+              "darwin_hex": "8510000013030000",
+              "linux_hex": "85100000be020000"
+            },
+            {
+              "offset": 2832,
+              "darwin_hex": "85100000fc020000",
+              "linux_hex": "85100000a7020000"
+            },
+            {
+              "offset": 2952,
+              "darwin_hex": "8510000083020000",
+              "linux_hex": "85100000ae020000"
+            },
+            {
+              "offset": 2992,
+              "darwin_hex": "85100000d3020000",
+              "linux_hex": "851000007e020000"
+            },
+            {
+              "offset": 3064,
+              "darwin_hex": "85100000ca020000",
+              "linux_hex": "8510000075020000"
+            },
+            {
+              "offset": 4208,
+              "darwin_hex": "8510000050020000",
+              "linux_hex": "85100000fb010000"
+            },
+            {
+              "offset": 4280,
+              "darwin_hex": "85100000dd010000",
+              "linux_hex": "8510000008020000"
+            }
+          ]
+        }
+      ],
+      "outgoing_calls": [
+        {
+          "linux_start": 529880,
+          "original_start": 697984,
+          "calls": [
+            {
+              "instruction_offset": 2104,
+              "instruction_hex": "8510000002030000",
+              "linux_target": 538152,
+              "original_target": 706256,
+              "bytes": 176,
+              "candidate_names": [
+                "__lshrti3"
+              ],
+              "linux_sha256": "22e7755c7fd12e8e3183b82a712a25fb6de25e0ca572f98e5ebcd8b737d75b73",
+              "original_sha256": "22e7755c7fd12e8e3183b82a712a25fb6de25e0ca572f98e5ebcd8b737d75b73",
+              "raw_equal": true,
+              "original_window": 706256
+            },
+            {
+              "instruction_offset": 2144,
+              "instruction_hex": "85100000fd020000",
+              "linux_target": 538152,
+              "original_target": 706256,
+              "bytes": 176,
+              "candidate_names": [
+                "__lshrti3"
+              ],
+              "linux_sha256": "22e7755c7fd12e8e3183b82a712a25fb6de25e0ca572f98e5ebcd8b737d75b73",
+              "original_sha256": "22e7755c7fd12e8e3183b82a712a25fb6de25e0ca572f98e5ebcd8b737d75b73",
+              "raw_equal": true,
+              "original_window": 706256
+            },
+            {
+              "instruction_offset": 2208,
+              "instruction_hex": "851000000b030000",
+              "linux_target": 538328,
+              "original_target": 706432,
+              "bytes": 344,
+              "candidate_names": [
+                "__multi3"
+              ],
+              "linux_sha256": "9e0062594997b6e6a2864d0c25da2f52b97034ebfde566d428664d0aeb84af21",
+              "original_sha256": "9e0062594997b6e6a2864d0c25da2f52b97034ebfde566d428664d0aeb84af21",
+              "raw_equal": true,
+              "original_window": 706432
+            },
+            {
+              "instruction_offset": 2264,
+              "instruction_hex": "8510000004030000",
+              "linux_target": 538328,
+              "original_target": 706432,
+              "bytes": 344,
+              "candidate_names": [
+                "__multi3"
+              ],
+              "linux_sha256": "9e0062594997b6e6a2864d0c25da2f52b97034ebfde566d428664d0aeb84af21",
+              "original_sha256": "9e0062594997b6e6a2864d0c25da2f52b97034ebfde566d428664d0aeb84af21",
+              "raw_equal": true,
+              "original_window": 706432
+            },
+            {
+              "instruction_offset": 2648,
+              "instruction_hex": "85100000be020000",
+              "linux_target": 538152,
+              "original_target": 706256,
+              "bytes": 176,
+              "candidate_names": [
+                "__lshrti3"
+              ],
+              "linux_sha256": "22e7755c7fd12e8e3183b82a712a25fb6de25e0ca572f98e5ebcd8b737d75b73",
+              "original_sha256": "22e7755c7fd12e8e3183b82a712a25fb6de25e0ca572f98e5ebcd8b737d75b73",
+              "raw_equal": true,
+              "original_window": 706256
+            },
+            {
+              "instruction_offset": 2832,
+              "instruction_hex": "85100000a7020000",
+              "linux_target": 538152,
+              "original_target": 706256,
+              "bytes": 176,
+              "candidate_names": [
+                "__lshrti3"
+              ],
+              "linux_sha256": "22e7755c7fd12e8e3183b82a712a25fb6de25e0ca572f98e5ebcd8b737d75b73",
+              "original_sha256": "22e7755c7fd12e8e3183b82a712a25fb6de25e0ca572f98e5ebcd8b737d75b73",
+              "raw_equal": true,
+              "original_window": 706256
+            },
+            {
+              "instruction_offset": 2952,
+              "instruction_hex": "85100000ae020000",
+              "linux_target": 538328,
+              "original_target": 706432,
+              "bytes": 344,
+              "candidate_names": [
+                "__multi3"
+              ],
+              "linux_sha256": "9e0062594997b6e6a2864d0c25da2f52b97034ebfde566d428664d0aeb84af21",
+              "original_sha256": "9e0062594997b6e6a2864d0c25da2f52b97034ebfde566d428664d0aeb84af21",
+              "raw_equal": true,
+              "original_window": 706432
+            },
+            {
+              "instruction_offset": 2992,
+              "instruction_hex": "851000007e020000",
+              "linux_target": 537984,
+              "original_target": 706088,
+              "bytes": 168,
+              "candidate_names": [
+                "__ashlti3"
+              ],
+              "linux_sha256": "66b416da856979aba66deabc3de698a333ab762206427865b1fbc8983e27af55",
+              "original_sha256": "66b416da856979aba66deabc3de698a333ab762206427865b1fbc8983e27af55",
+              "raw_equal": true,
+              "original_window": 706088
+            },
+            {
+              "instruction_offset": 3064,
+              "instruction_hex": "8510000075020000",
+              "linux_target": 537984,
+              "original_target": 706088,
+              "bytes": 168,
+              "candidate_names": [
+                "__ashlti3"
+              ],
+              "linux_sha256": "66b416da856979aba66deabc3de698a333ab762206427865b1fbc8983e27af55",
+              "original_sha256": "66b416da856979aba66deabc3de698a333ab762206427865b1fbc8983e27af55",
+              "raw_equal": true,
+              "original_window": 706088
+            },
+            {
+              "instruction_offset": 4208,
+              "instruction_hex": "85100000fb010000",
+              "linux_target": 538152,
+              "original_target": 706256,
+              "bytes": 176,
+              "candidate_names": [
+                "__lshrti3"
+              ],
+              "linux_sha256": "22e7755c7fd12e8e3183b82a712a25fb6de25e0ca572f98e5ebcd8b737d75b73",
+              "original_sha256": "22e7755c7fd12e8e3183b82a712a25fb6de25e0ca572f98e5ebcd8b737d75b73",
+              "raw_equal": true,
+              "original_window": 706256
+            },
+            {
+              "instruction_offset": 4280,
+              "instruction_hex": "8510000008020000",
+              "linux_target": 538328,
+              "original_target": 706432,
+              "bytes": 344,
+              "candidate_names": [
+                "__multi3"
+              ],
+              "linux_sha256": "9e0062594997b6e6a2864d0c25da2f52b97034ebfde566d428664d0aeb84af21",
+              "original_sha256": "9e0062594997b6e6a2864d0c25da2f52b97034ebfde566d428664d0aeb84af21",
+              "raw_equal": true,
+              "original_window": 706432
+            }
+          ]
+        }
+      ],
+      "association": "all equal-body alternatives retained; no unique original type attribution"
+    },
+    {
+      "symbol_family": [
+        "_ZN17compiler_builtins5float3mul8__muldf3E"
+      ],
+      "linux_symbols": [
+        {
+          "names": [
+            "_ZN17compiler_builtins5float3mul8__muldf317h541a3f2bd4b92bbdE"
+          ],
+          "start": 535792,
+          "bytes": 2008,
+          "raw_sha256": "e2284334df80c37c757df7cf16f96b74626a1d52d2527d9ed285bcfbd5487221"
+        }
+      ],
+      "darwin_symbols": [
+        {
+          "names": [
+            "_ZN17compiler_builtins5float3mul8__muldf317hf8d1e2ed25293969E"
+          ],
+          "start": 535384,
+          "bytes": 2008,
+          "raw_sha256": "efecb9d02e3f11b3fa4039f1a6a4b3805ad7e3a5c4a41e44454c09edbdd5db72"
+        }
+      ],
+      "captured_windows": [
+        {
+          "file_offset": 703896,
+          "bytes": 2008,
+          "sha256": "e2284334df80c37c757df7cf16f96b74626a1d52d2527d9ed285bcfbd5487221",
+          "address": 703896,
+          "end_address": 705904,
+          "next_inferred_entry": 705904,
+          "start_evidence": {
+            "direct_calls": [
+              {
+                "caller_address": 703880,
+                "caller_file_offset": 703880,
+                "instruction_hex": "8510000001000000",
+                "signed_displacement": 1
+              }
+            ],
+            "relocated_code_pointers": []
+          },
+          "end_evidence": {
+            "direct_calls": [
+              {
+                "caller_address": 651832,
+                "caller_file_offset": 651832,
+                "instruction_hex": "85100000661a0000",
+                "signed_displacement": 6758
+              },
+              {
+                "caller_address": 652208,
+                "caller_file_offset": 652208,
+                "instruction_hex": "85100000371a0000",
+                "signed_displacement": 6711
+              }
+            ],
+            "relocated_code_pointers": []
+          },
+          "complete_inferred_window": true,
+          "loader_relocation_overlaps": []
+        }
+      ],
+      "cross_host_deltas": [
+        {
+          "linux_start": 535792,
+          "darwin_start": 535384,
+          "different_byte_offsets": [
+            284
+          ],
+          "only_internal_call_displacements": true,
+          "changed_instructions": [
+            {
+              "offset": 280,
+              "darwin_hex": "8510000017010000",
+              "linux_hex": "8510000019010000"
+            }
+          ]
+        }
+      ],
+      "outgoing_calls": [
+        {
+          "linux_start": 535792,
+          "original_start": 703896,
+          "calls": [
+            {
+              "instruction_offset": 280,
+              "instruction_hex": "8510000019010000",
+              "linux_target": 538328,
+              "original_target": 706432,
+              "bytes": 344,
+              "candidate_names": [
+                "__multi3"
+              ],
+              "linux_sha256": "9e0062594997b6e6a2864d0c25da2f52b97034ebfde566d428664d0aeb84af21",
+              "original_sha256": "9e0062594997b6e6a2864d0c25da2f52b97034ebfde566d428664d0aeb84af21",
+              "raw_equal": true,
+              "original_window": 706432
+            }
+          ]
+        }
+      ],
+      "association": "all equal-body alternatives retained; no unique original type attribution"
+    },
+    {
+      "symbol_family": [
+        "_ZN4core5error5Error7type_idE"
+      ],
+      "linux_symbols": [
+        {
+          "names": [
+            "_ZN4core5error5Error7type_id17hc75779b4c8b38802E"
+          ],
+          "start": 441464,
+          "bytes": 40,
+          "raw_sha256": "adc10f09641de9edaafbcb44c1aef0ac342e2170f7e321d1a7993a744a6ed907"
+        },
+        {
+          "names": [
+            "_ZN4core5error5Error7type_id17h9b5908a8d5c815c6E"
+          ],
+          "start": 498600,
+          "bytes": 40,
+          "raw_sha256": "adc10f09641de9edaafbcb44c1aef0ac342e2170f7e321d1a7993a744a6ed907"
+        }
+      ],
+      "darwin_symbols": [
+        {
+          "names": [
+            "_ZN4core5error5Error7type_id17h1e5ca5a779706f42E"
+          ],
+          "start": 441464,
+          "bytes": 40,
+          "raw_sha256": "151cc26517b94f6edc0dd28c729b7c8b45bdce2053f2e9ad8c0e362e891fa822"
+        },
+        {
+          "names": [
+            "_ZN4core5error5Error7type_id17h1921b95b16522310E"
+          ],
+          "start": 498600,
+          "bytes": 40,
+          "raw_sha256": "151cc26517b94f6edc0dd28c729b7c8b45bdce2053f2e9ad8c0e362e891fa822"
+        }
+      ],
+      "captured_windows": [
+        {
+          "file_offset": 599768,
+          "bytes": 40,
+          "sha256": "adc10f09641de9edaafbcb44c1aef0ac342e2170f7e321d1a7993a744a6ed907",
+          "address": 599768,
+          "end_address": 599808,
+          "next_inferred_entry": 599808,
+          "start_evidence": {
+            "direct_calls": [],
+            "relocated_code_pointers": [
+              {
+                "relocation": {
+                  "address": 728232,
+                  "type": 8,
+                  "symbol_index": 0
+                },
+                "file_offset": 728232,
+                "section": ".data.rel.ro",
+                "raw_hex": "00000000d8260900",
+                "encoding": "stored generic-v0 high-word pointer; low word zero"
+              }
+            ]
+          },
+          "end_evidence": {
+            "direct_calls": [
+              {
+                "caller_address": 600432,
+                "caller_file_offset": 600432,
+                "instruction_hex": "85100000b1ffffff",
+                "signed_displacement": -79
+              }
+            ],
+            "relocated_code_pointers": []
+          },
+          "complete_inferred_window": true,
+          "loader_relocation_overlaps": []
+        },
+        {
+          "file_offset": 666624,
+          "bytes": 40,
+          "sha256": "adc10f09641de9edaafbcb44c1aef0ac342e2170f7e321d1a7993a744a6ed907",
+          "address": 666624,
+          "end_address": 666664,
+          "next_inferred_entry": 666664,
+          "start_evidence": {
+            "direct_calls": [],
+            "relocated_code_pointers": [
+              {
+                "relocation": {
+                  "address": 731888,
+                  "type": 8,
+                  "symbol_index": 0
+                },
+                "file_offset": 731888,
+                "section": ".data.rel.ro",
+                "raw_hex": "00000000002c0a00",
+                "encoding": "stored generic-v0 high-word pointer; low word zero"
+              }
+            ]
+          },
+          "end_evidence": {
+            "direct_calls": [],
+            "relocated_code_pointers": [
+              {
+                "relocation": {
+                  "address": 732032,
+                  "type": 8,
+                  "symbol_index": 0
+                },
+                "file_offset": 732032,
+                "section": ".data.rel.ro",
+                "raw_hex": "00000000282c0a00",
+                "encoding": "stored generic-v0 high-word pointer; low word zero"
+              }
+            ]
+          },
+          "complete_inferred_window": true,
+          "loader_relocation_overlaps": []
+        }
+      ],
+      "cross_host_deltas": [
+        {
+          "linux_start": 441464,
+          "darwin_start": 441464,
+          "different_byte_offsets": [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15,
+            20,
+            21,
+            22,
+            23,
+            28,
+            29,
+            30,
+            31
+          ],
+          "only_internal_call_displacements": false,
+          "changed_instructions": [
+            {
+              "offset": 0,
+              "darwin_hex": "1800000027a7dd8b",
+              "linux_hex": "180000009121c33b"
+            },
+            {
+              "offset": 8,
+              "darwin_hex": "000000003aba2cfc",
+              "linux_hex": "00000000e2068bb4"
+            },
+            {
+              "offset": 16,
+              "darwin_hex": "18010000403b535c",
+              "linux_hex": "180100008ef0fc1e"
+            },
+            {
+              "offset": 24,
+              "darwin_hex": "00000000b9c3f709",
+              "linux_hex": "00000000a7142980"
+            }
+          ],
+          "linux_return_constants": {
+            "r0": "0xb48b06e23bc32191",
+            "r1": "0x802914a71efcf08e"
+          },
+          "darwin_return_constants": {
+            "r0": "0xfc2cba3a8bdda727",
+            "r1": "0x09f7c3b95c533b40"
+          }
+        },
+        {
+          "linux_start": 441464,
+          "darwin_start": 498600,
+          "different_byte_offsets": [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15,
+            20,
+            21,
+            22,
+            23,
+            28,
+            29,
+            30,
+            31
+          ],
+          "only_internal_call_displacements": false,
+          "changed_instructions": [
+            {
+              "offset": 0,
+              "darwin_hex": "1800000027a7dd8b",
+              "linux_hex": "180000009121c33b"
+            },
+            {
+              "offset": 8,
+              "darwin_hex": "000000003aba2cfc",
+              "linux_hex": "00000000e2068bb4"
+            },
+            {
+              "offset": 16,
+              "darwin_hex": "18010000403b535c",
+              "linux_hex": "180100008ef0fc1e"
+            },
+            {
+              "offset": 24,
+              "darwin_hex": "00000000b9c3f709",
+              "linux_hex": "00000000a7142980"
+            }
+          ],
+          "linux_return_constants": {
+            "r0": "0xb48b06e23bc32191",
+            "r1": "0x802914a71efcf08e"
+          },
+          "darwin_return_constants": {
+            "r0": "0xfc2cba3a8bdda727",
+            "r1": "0x09f7c3b95c533b40"
+          }
+        },
+        {
+          "linux_start": 498600,
+          "darwin_start": 441464,
+          "different_byte_offsets": [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15,
+            20,
+            21,
+            22,
+            23,
+            28,
+            29,
+            30,
+            31
+          ],
+          "only_internal_call_displacements": false,
+          "changed_instructions": [
+            {
+              "offset": 0,
+              "darwin_hex": "1800000027a7dd8b",
+              "linux_hex": "180000009121c33b"
+            },
+            {
+              "offset": 8,
+              "darwin_hex": "000000003aba2cfc",
+              "linux_hex": "00000000e2068bb4"
+            },
+            {
+              "offset": 16,
+              "darwin_hex": "18010000403b535c",
+              "linux_hex": "180100008ef0fc1e"
+            },
+            {
+              "offset": 24,
+              "darwin_hex": "00000000b9c3f709",
+              "linux_hex": "00000000a7142980"
+            }
+          ],
+          "linux_return_constants": {
+            "r0": "0xb48b06e23bc32191",
+            "r1": "0x802914a71efcf08e"
+          },
+          "darwin_return_constants": {
+            "r0": "0xfc2cba3a8bdda727",
+            "r1": "0x09f7c3b95c533b40"
+          }
+        },
+        {
+          "linux_start": 498600,
+          "darwin_start": 498600,
+          "different_byte_offsets": [
+            4,
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15,
+            20,
+            21,
+            22,
+            23,
+            28,
+            29,
+            30,
+            31
+          ],
+          "only_internal_call_displacements": false,
+          "changed_instructions": [
+            {
+              "offset": 0,
+              "darwin_hex": "1800000027a7dd8b",
+              "linux_hex": "180000009121c33b"
+            },
+            {
+              "offset": 8,
+              "darwin_hex": "000000003aba2cfc",
+              "linux_hex": "00000000e2068bb4"
+            },
+            {
+              "offset": 16,
+              "darwin_hex": "18010000403b535c",
+              "linux_hex": "180100008ef0fc1e"
+            },
+            {
+              "offset": 24,
+              "darwin_hex": "00000000b9c3f709",
+              "linux_hex": "00000000a7142980"
+            }
+          ],
+          "linux_return_constants": {
+            "r0": "0xb48b06e23bc32191",
+            "r1": "0x802914a71efcf08e"
+          },
+          "darwin_return_constants": {
+            "r0": "0xfc2cba3a8bdda727",
+            "r1": "0x09f7c3b95c533b40"
+          }
+        }
+      ],
+      "outgoing_calls": [
+        {
+          "linux_start": 441464,
+          "original_start": 599768,
+          "calls": []
+        },
+        {
+          "linux_start": 441464,
+          "original_start": 666624,
+          "calls": []
+        },
+        {
+          "linux_start": 498600,
+          "original_start": 599768,
+          "calls": []
+        },
+        {
+          "linux_start": 498600,
+          "original_start": 666624,
+          "calls": []
+        }
+      ],
+      "association": "all equal-body alternatives retained; no unique original type attribution"
+    },
+    {
+      "symbol_family": [
+        "__udivti3"
+      ],
+      "linux_symbols": [
+        {
+          "names": [
+            "__udivti3"
+          ],
+          "start": 529800,
+          "bytes": 80,
+          "raw_sha256": "627549169fce336e90423581915a7d052b2c95ed45ffc5d9b64b49e6abe8abe8"
+        }
+      ],
+      "darwin_symbols": [
+        {
+          "names": [
+            "__udivti3"
+          ],
+          "start": 538248,
+          "bytes": 80,
+          "raw_sha256": "fe0caaa8109fea6790385081800540671181ea5b078ddbf59687c2d9b7aac2f7"
+        }
+      ],
+      "captured_windows": [
+        {
+          "file_offset": 697904,
+          "bytes": 80,
+          "sha256": "627549169fce336e90423581915a7d052b2c95ed45ffc5d9b64b49e6abe8abe8",
+          "address": 697904,
+          "end_address": 697984,
+          "next_inferred_entry": 697984,
+          "start_evidence": {
+            "direct_calls": [
+              {
+                "caller_address": 86152,
+                "caller_file_offset": 86152,
+                "instruction_hex": "85100000b42a0100",
+                "signed_displacement": 76468
+              },
+              {
+                "caller_address": 86768,
+                "caller_file_offset": 86768,
+                "instruction_hex": "85100000672a0100",
+                "signed_displacement": 76391
+              },
+              {
+                "caller_address": 96376,
+                "caller_file_offset": 96376,
+                "instruction_hex": "85100000b6250100",
+                "signed_displacement": 75190
+              },
+              {
+                "caller_address": 96632,
+                "caller_file_offset": 96632,
+                "instruction_hex": "8510000096250100",
+                "signed_displacement": 75158
+              },
+              {
+                "caller_address": 114224,
+                "caller_file_offset": 114224,
+                "instruction_hex": "85100000ff1c0100",
+                "signed_displacement": 72959
+              },
+              {
+                "caller_address": 114296,
+                "caller_file_offset": 114296,
+                "instruction_hex": "85100000f61c0100",
+                "signed_displacement": 72950
+              },
+              {
+                "caller_address": 115680,
+                "caller_file_offset": 115680,
+                "instruction_hex": "85100000491c0100",
+                "signed_displacement": 72777
+              },
+              {
+                "caller_address": 115808,
+                "caller_file_offset": 115808,
+                "instruction_hex": "85100000391c0100",
+                "signed_displacement": 72761
+              },
+              {
+                "caller_address": 116016,
+                "caller_file_offset": 116016,
+                "instruction_hex": "851000001f1c0100",
+                "signed_displacement": 72735
+              },
+              {
+                "caller_address": 128088,
+                "caller_file_offset": 128088,
+                "instruction_hex": "851000003a160100",
+                "signed_displacement": 71226
+              },
+              {
+                "caller_address": 128160,
+                "caller_file_offset": 128160,
+                "instruction_hex": "8510000031160100",
+                "signed_displacement": 71217
+              },
+              {
+                "caller_address": 129128,
+                "caller_file_offset": 129128,
+                "instruction_hex": "85100000b8150100",
+                "signed_displacement": 71096
+              },
+              {
+                "caller_address": 129256,
+                "caller_file_offset": 129256,
+                "instruction_hex": "85100000a8150100",
+                "signed_displacement": 71080
+              },
+              {
+                "caller_address": 129976,
+                "caller_file_offset": 129976,
+                "instruction_hex": "851000004e150100",
+                "signed_displacement": 70990
+              },
+              {
+                "caller_address": 141112,
+                "caller_file_offset": 141112,
+                "instruction_hex": "85100000de0f0100",
+                "signed_displacement": 69598
+              },
+              {
+                "caller_address": 141184,
+                "caller_file_offset": 141184,
+                "instruction_hex": "85100000d50f0100",
+                "signed_displacement": 69589
+              },
+              {
+                "caller_address": 142656,
+                "caller_file_offset": 142656,
+                "instruction_hex": "851000001d0f0100",
+                "signed_displacement": 69405
+              },
+              {
+                "caller_address": 143040,
+                "caller_file_offset": 143040,
+                "instruction_hex": "85100000ed0e0100",
+                "signed_displacement": 69357
+              },
+              {
+                "caller_address": 143200,
+                "caller_file_offset": 143200,
+                "instruction_hex": "85100000d90e0100",
+                "signed_displacement": 69337
+              },
+              {
+                "caller_address": 159752,
+                "caller_file_offset": 159752,
+                "instruction_hex": "85100000c4060100",
+                "signed_displacement": 67268
+              },
+              {
+                "caller_address": 159832,
+                "caller_file_offset": 159832,
+                "instruction_hex": "85100000ba060100",
+                "signed_displacement": 67258
+              },
+              {
+                "caller_address": 161280,
+                "caller_file_offset": 161280,
+                "instruction_hex": "8510000005060100",
+                "signed_displacement": 67077
+              },
+              {
+                "caller_address": 161648,
+                "caller_file_offset": 161648,
+                "instruction_hex": "85100000d7050100",
+                "signed_displacement": 67031
+              },
+              {
+                "caller_address": 161856,
+                "caller_file_offset": 161856,
+                "instruction_hex": "85100000bd050100",
+                "signed_displacement": 67005
+              },
+              {
+                "caller_address": 185512,
+                "caller_file_offset": 185512,
+                "instruction_hex": "8510000030fa0000",
+                "signed_displacement": 64048
+              },
+              {
+                "caller_address": 185928,
+                "caller_file_offset": 185928,
+                "instruction_hex": "85100000fcf90000",
+                "signed_displacement": 63996
+              },
+              {
+                "caller_address": 186072,
+                "caller_file_offset": 186072,
+                "instruction_hex": "85100000eaf90000",
+                "signed_displacement": 63978
+              },
+              {
+                "caller_address": 186768,
+                "caller_file_offset": 186768,
+                "instruction_hex": "8510000093f90000",
+                "signed_displacement": 63891
+              },
+              {
+                "caller_address": 187152,
+                "caller_file_offset": 187152,
+                "instruction_hex": "8510000063f90000",
+                "signed_displacement": 63843
+              },
+              {
+                "caller_address": 187360,
+                "caller_file_offset": 187360,
+                "instruction_hex": "8510000049f90000",
+                "signed_displacement": 63817
+              }
+            ],
+            "relocated_code_pointers": []
+          },
+          "end_evidence": {
+            "direct_calls": [
+              {
+                "caller_address": 697952,
+                "caller_file_offset": 697952,
+                "instruction_hex": "8510000003000000",
+                "signed_displacement": 3
+              }
+            ],
+            "relocated_code_pointers": []
+          },
+          "complete_inferred_window": true,
+          "loader_relocation_overlaps": []
+        }
+      ],
+      "cross_host_deltas": [
+        {
+          "linux_start": 529800,
+          "darwin_start": 538248,
+          "different_byte_offsets": [
+            52,
+            53,
+            54,
+            55
+          ],
+          "only_internal_call_displacements": true,
+          "changed_instructions": [
+            {
+              "offset": 48,
+              "darwin_hex": "85100000d9fbffff",
+              "linux_hex": "8510000003000000"
+            }
+          ]
+        }
+      ],
+      "outgoing_calls": [
+        {
+          "linux_start": 529800,
+          "original_start": 697904,
+          "calls": [
+            {
+              "instruction_offset": 48,
+              "instruction_hex": "8510000003000000",
+              "linux_target": 529880,
+              "original_target": 697984,
+              "bytes": 5128,
+              "candidate_names": [
+                "_ZN17compiler_builtins3int19specialized_div_rem12u128_div_rem17h79f8b203ef37c50bE"
+              ],
+              "linux_sha256": "ddae507f1e2f9fcbc52f7ef4f3ba69a9301602c222fe5e5d488200b6ea3ca375",
+              "original_sha256": "ddae507f1e2f9fcbc52f7ef4f3ba69a9301602c222fe5e5d488200b6ea3ca375",
+              "raw_equal": true,
+              "original_window": 697984
+            }
+          ]
+        }
+      ],
+      "association": "all equal-body alternatives retained; no unique original type attribution"
+    }
+  ],
+  "direct_callee_windows": [
+    {
+      "file_offset": 697984,
+      "bytes": 5128,
+      "sha256": "ddae507f1e2f9fcbc52f7ef4f3ba69a9301602c222fe5e5d488200b6ea3ca375",
+      "address": 697984,
+      "end_address": 703112,
+      "next_inferred_entry": 703112,
+      "start_evidence": {
+        "direct_calls": [
+          {
+            "caller_address": 697952,
+            "caller_file_offset": 697952,
+            "instruction_hex": "8510000003000000",
+            "signed_displacement": 3
+          }
+        ],
+        "relocated_code_pointers": []
+      },
+      "end_evidence": {
+        "direct_calls": [
+          {
+            "caller_address": 651744,
+            "caller_file_offset": 651744,
+            "instruction_hex": "8510000014190000",
+            "signed_displacement": 6420
+          },
+          {
+            "caller_address": 652128,
+            "caller_file_offset": 652128,
+            "instruction_hex": "85100000e4180000",
+            "signed_displacement": 6372
+          }
+        ],
+        "relocated_code_pointers": []
+      },
+      "complete_inferred_window": true,
+      "loader_relocation_overlaps": []
+    },
+    {
+      "file_offset": 706088,
+      "bytes": 168,
+      "sha256": "66b416da856979aba66deabc3de698a333ab762206427865b1fbc8983e27af55",
+      "address": 706088,
+      "end_address": 706256,
+      "next_inferred_entry": 706256,
+      "start_evidence": {
+        "direct_calls": [
+          {
+            "caller_address": 700976,
+            "caller_file_offset": 700976,
+            "instruction_hex": "851000007e020000",
+            "signed_displacement": 638
+          },
+          {
+            "caller_address": 701048,
+            "caller_file_offset": 701048,
+            "instruction_hex": "8510000075020000",
+            "signed_displacement": 629
+          }
+        ],
+        "relocated_code_pointers": []
+      },
+      "end_evidence": {
+        "direct_calls": [
+          {
+            "caller_address": 700088,
+            "caller_file_offset": 700088,
+            "instruction_hex": "8510000002030000",
+            "signed_displacement": 770
+          },
+          {
+            "caller_address": 700128,
+            "caller_file_offset": 700128,
+            "instruction_hex": "85100000fd020000",
+            "signed_displacement": 765
+          },
+          {
+            "caller_address": 700632,
+            "caller_file_offset": 700632,
+            "instruction_hex": "85100000be020000",
+            "signed_displacement": 702
+          },
+          {
+            "caller_address": 700816,
+            "caller_file_offset": 700816,
+            "instruction_hex": "85100000a7020000",
+            "signed_displacement": 679
+          },
+          {
+            "caller_address": 702192,
+            "caller_file_offset": 702192,
+            "instruction_hex": "85100000fb010000",
+            "signed_displacement": 507
+          }
+        ],
+        "relocated_code_pointers": []
+      },
+      "complete_inferred_window": true,
+      "loader_relocation_overlaps": []
+    },
+    {
+      "file_offset": 706256,
+      "bytes": 176,
+      "sha256": "22e7755c7fd12e8e3183b82a712a25fb6de25e0ca572f98e5ebcd8b737d75b73",
+      "address": 706256,
+      "end_address": 706432,
+      "next_inferred_entry": 706432,
+      "start_evidence": {
+        "direct_calls": [
+          {
+            "caller_address": 700088,
+            "caller_file_offset": 700088,
+            "instruction_hex": "8510000002030000",
+            "signed_displacement": 770
+          },
+          {
+            "caller_address": 700128,
+            "caller_file_offset": 700128,
+            "instruction_hex": "85100000fd020000",
+            "signed_displacement": 765
+          },
+          {
+            "caller_address": 700632,
+            "caller_file_offset": 700632,
+            "instruction_hex": "85100000be020000",
+            "signed_displacement": 702
+          },
+          {
+            "caller_address": 700816,
+            "caller_file_offset": 700816,
+            "instruction_hex": "85100000a7020000",
+            "signed_displacement": 679
+          },
+          {
+            "caller_address": 702192,
+            "caller_file_offset": 702192,
+            "instruction_hex": "85100000fb010000",
+            "signed_displacement": 507
+          }
+        ],
+        "relocated_code_pointers": []
+      },
+      "end_evidence": {
+        "direct_calls": [
+          {
+            "caller_address": 37816,
+            "caller_file_offset": 37816,
+            "instruction_hex": "8510000078460100",
+            "signed_displacement": 83576
+          },
+          {
+            "caller_address": 86104,
+            "caller_file_offset": 86104,
+            "instruction_hex": "85100000e42e0100",
+            "signed_displacement": 77540
+          },
+          {
+            "caller_address": 86224,
+            "caller_file_offset": 86224,
+            "instruction_hex": "85100000d52e0100",
+            "signed_displacement": 77525
+          },
+          {
+            "caller_address": 86280,
+            "caller_file_offset": 86280,
+            "instruction_hex": "85100000ce2e0100",
+            "signed_displacement": 77518
+          },
+          {
+            "caller_address": 96328,
+            "caller_file_offset": 96328,
+            "instruction_hex": "85100000e6290100",
+            "signed_displacement": 76262
+          },
+          {
+            "caller_address": 96440,
+            "caller_file_offset": 96440,
+            "instruction_hex": "85100000d8290100",
+            "signed_displacement": 76248
+          },
+          {
+            "caller_address": 96496,
+            "caller_file_offset": 96496,
+            "instruction_hex": "85100000d1290100",
+            "signed_displacement": 76241
+          },
+          {
+            "caller_address": 113984,
+            "caller_file_offset": 113984,
+            "instruction_hex": "8510000047210100",
+            "signed_displacement": 74055
+          },
+          {
+            "caller_address": 114040,
+            "caller_file_offset": 114040,
+            "instruction_hex": "8510000040210100",
+            "signed_displacement": 74048
+          },
+          {
+            "caller_address": 114184,
+            "caller_file_offset": 114184,
+            "instruction_hex": "851000002e210100",
+            "signed_displacement": 74030
+          },
+          {
+            "caller_address": 115608,
+            "caller_file_offset": 115608,
+            "instruction_hex": "851000007c200100",
+            "signed_displacement": 73852
+          },
+          {
+            "caller_address": 115768,
+            "caller_file_offset": 115768,
+            "instruction_hex": "8510000068200100",
+            "signed_displacement": 73832
+          },
+          {
+            "caller_address": 115976,
+            "caller_file_offset": 115976,
+            "instruction_hex": "851000004e200100",
+            "signed_displacement": 73806
+          },
+          {
+            "caller_address": 127848,
+            "caller_file_offset": 127848,
+            "instruction_hex": "85100000821a0100",
+            "signed_displacement": 72322
+          },
+          {
+            "caller_address": 127904,
+            "caller_file_offset": 127904,
+            "instruction_hex": "851000007b1a0100",
+            "signed_displacement": 72315
+          },
+          {
+            "caller_address": 128048,
+            "caller_file_offset": 128048,
+            "instruction_hex": "85100000691a0100",
+            "signed_displacement": 72297
+          },
+          {
+            "caller_address": 129056,
+            "caller_file_offset": 129056,
+            "instruction_hex": "85100000eb190100",
+            "signed_displacement": 72171
+          },
+          {
+            "caller_address": 129216,
+            "caller_file_offset": 129216,
+            "instruction_hex": "85100000d7190100",
+            "signed_displacement": 72151
+          },
+          {
+            "caller_address": 129928,
+            "caller_file_offset": 129928,
+            "instruction_hex": "851000007e190100",
+            "signed_displacement": 72062
+          },
+          {
+            "caller_address": 140872,
+            "caller_file_offset": 140872,
+            "instruction_hex": "8510000026140100",
+            "signed_displacement": 70694
+          },
+          {
+            "caller_address": 140928,
+            "caller_file_offset": 140928,
+            "instruction_hex": "851000001f140100",
+            "signed_displacement": 70687
+          },
+          {
+            "caller_address": 141072,
+            "caller_file_offset": 141072,
+            "instruction_hex": "851000000d140100",
+            "signed_displacement": 70669
+          },
+          {
+            "caller_address": 142576,
+            "caller_file_offset": 142576,
+            "instruction_hex": "8510000051130100",
+            "signed_displacement": 70481
+          },
+          {
+            "caller_address": 143000,
+            "caller_file_offset": 143000,
+            "instruction_hex": "851000001c130100",
+            "signed_displacement": 70428
+          },
+          {
+            "caller_address": 143160,
+            "caller_file_offset": 143160,
+            "instruction_hex": "8510000008130100",
+            "signed_displacement": 70408
+          },
+          {
+            "caller_address": 159512,
+            "caller_file_offset": 159512,
+            "instruction_hex": "851000000c0b0100",
+            "signed_displacement": 68364
+          },
+          {
+            "caller_address": 159568,
+            "caller_file_offset": 159568,
+            "instruction_hex": "85100000050b0100",
+            "signed_displacement": 68357
+          },
+          {
+            "caller_address": 159712,
+            "caller_file_offset": 159712,
+            "instruction_hex": "85100000f30a0100",
+            "signed_displacement": 68339
+          },
+          {
+            "caller_address": 161200,
+            "caller_file_offset": 161200,
+            "instruction_hex": "85100000390a0100",
+            "signed_displacement": 68153
+          },
+          {
+            "caller_address": 161608,
+            "caller_file_offset": 161608,
+            "instruction_hex": "85100000060a0100",
+            "signed_displacement": 68102
+          },
+          {
+            "caller_address": 161808,
+            "caller_file_offset": 161808,
+            "instruction_hex": "85100000ed090100",
+            "signed_displacement": 68077
+          },
+          {
+            "caller_address": 185472,
+            "caller_file_offset": 185472,
+            "instruction_hex": "851000005ffe0000",
+            "signed_displacement": 65119
+          },
+          {
+            "caller_address": 185888,
+            "caller_file_offset": 185888,
+            "instruction_hex": "851000002bfe0000",
+            "signed_displacement": 65067
+          },
+          {
+            "caller_address": 186032,
+            "caller_file_offset": 186032,
+            "instruction_hex": "8510000019fe0000",
+            "signed_displacement": 65049
+          },
+          {
+            "caller_address": 186728,
+            "caller_file_offset": 186728,
+            "instruction_hex": "85100000c2fd0000",
+            "signed_displacement": 64962
+          },
+          {
+            "caller_address": 187112,
+            "caller_file_offset": 187112,
+            "instruction_hex": "8510000092fd0000",
+            "signed_displacement": 64914
+          },
+          {
+            "caller_address": 187312,
+            "caller_file_offset": 187312,
+            "instruction_hex": "8510000079fd0000",
+            "signed_displacement": 64889
+          },
+          {
+            "caller_address": 540264,
+            "caller_file_offset": 540264,
+            "instruction_hex": "8510000022510000",
+            "signed_displacement": 20770
+          },
+          {
+            "caller_address": 603872,
+            "caller_file_offset": 603872,
+            "instruction_hex": "8510000013320000",
+            "signed_displacement": 12819
+          },
+          {
+            "caller_address": 605416,
+            "caller_file_offset": 605416,
+            "instruction_hex": "8510000052310000",
+            "signed_displacement": 12626
+          },
+          {
+            "caller_address": 609544,
+            "caller_file_offset": 609544,
+            "instruction_hex": "851000004e2f0000",
+            "signed_displacement": 12110
+          },
+          {
+            "caller_address": 612384,
+            "caller_file_offset": 612384,
+            "instruction_hex": "85100000eb2d0000",
+            "signed_displacement": 11755
+          },
+          {
+            "caller_address": 618128,
+            "caller_file_offset": 618128,
+            "instruction_hex": "851000001d2b0000",
+            "signed_displacement": 11037
+          },
+          {
+            "caller_address": 635840,
+            "caller_file_offset": 635840,
+            "instruction_hex": "8510000077220000",
+            "signed_displacement": 8823
+          },
+          {
+            "caller_address": 648624,
+            "caller_file_offset": 648624,
+            "instruction_hex": "85100000391c0000",
+            "signed_displacement": 7225
+          },
+          {
+            "caller_address": 651688,
+            "caller_file_offset": 651688,
+            "instruction_hex": "85100000ba1a0000",
+            "signed_displacement": 6842
+          },
+          {
+            "caller_address": 652072,
+            "caller_file_offset": 652072,
+            "instruction_hex": "851000008a1a0000",
+            "signed_displacement": 6794
+          },
+          {
+            "caller_address": 652784,
+            "caller_file_offset": 652784,
+            "instruction_hex": "85100000311a0000",
+            "signed_displacement": 6705
+          },
+          {
+            "caller_address": 653176,
+            "caller_file_offset": 653176,
+            "instruction_hex": "85100000001a0000",
+            "signed_displacement": 6656
+          },
+          {
+            "caller_address": 700192,
+            "caller_file_offset": 700192,
+            "instruction_hex": "851000000b030000",
+            "signed_displacement": 779
+          },
+          {
+            "caller_address": 700248,
+            "caller_file_offset": 700248,
+            "instruction_hex": "8510000004030000",
+            "signed_displacement": 772
+          },
+          {
+            "caller_address": 700936,
+            "caller_file_offset": 700936,
+            "instruction_hex": "85100000ae020000",
+            "signed_displacement": 686
+          },
+          {
+            "caller_address": 702264,
+            "caller_file_offset": 702264,
+            "instruction_hex": "8510000008020000",
+            "signed_displacement": 520
+          },
+          {
+            "caller_address": 704176,
+            "caller_file_offset": 704176,
+            "instruction_hex": "8510000019010000",
+            "signed_displacement": 281
+          }
+        ],
+        "relocated_code_pointers": []
+      },
+      "complete_inferred_window": true,
+      "loader_relocation_overlaps": []
+    },
+    {
+      "file_offset": 706432,
+      "bytes": 344,
+      "sha256": "9e0062594997b6e6a2864d0c25da2f52b97034ebfde566d428664d0aeb84af21",
+      "address": 706432,
+      "end_address": 706776,
+      "next_inferred_entry": 706776,
+      "start_evidence": {
+        "direct_calls": [
+          {
+            "caller_address": 37816,
+            "caller_file_offset": 37816,
+            "instruction_hex": "8510000078460100",
+            "signed_displacement": 83576
+          },
+          {
+            "caller_address": 86104,
+            "caller_file_offset": 86104,
+            "instruction_hex": "85100000e42e0100",
+            "signed_displacement": 77540
+          },
+          {
+            "caller_address": 86224,
+            "caller_file_offset": 86224,
+            "instruction_hex": "85100000d52e0100",
+            "signed_displacement": 77525
+          },
+          {
+            "caller_address": 86280,
+            "caller_file_offset": 86280,
+            "instruction_hex": "85100000ce2e0100",
+            "signed_displacement": 77518
+          },
+          {
+            "caller_address": 96328,
+            "caller_file_offset": 96328,
+            "instruction_hex": "85100000e6290100",
+            "signed_displacement": 76262
+          },
+          {
+            "caller_address": 96440,
+            "caller_file_offset": 96440,
+            "instruction_hex": "85100000d8290100",
+            "signed_displacement": 76248
+          },
+          {
+            "caller_address": 96496,
+            "caller_file_offset": 96496,
+            "instruction_hex": "85100000d1290100",
+            "signed_displacement": 76241
+          },
+          {
+            "caller_address": 113984,
+            "caller_file_offset": 113984,
+            "instruction_hex": "8510000047210100",
+            "signed_displacement": 74055
+          },
+          {
+            "caller_address": 114040,
+            "caller_file_offset": 114040,
+            "instruction_hex": "8510000040210100",
+            "signed_displacement": 74048
+          },
+          {
+            "caller_address": 114184,
+            "caller_file_offset": 114184,
+            "instruction_hex": "851000002e210100",
+            "signed_displacement": 74030
+          },
+          {
+            "caller_address": 115608,
+            "caller_file_offset": 115608,
+            "instruction_hex": "851000007c200100",
+            "signed_displacement": 73852
+          },
+          {
+            "caller_address": 115768,
+            "caller_file_offset": 115768,
+            "instruction_hex": "8510000068200100",
+            "signed_displacement": 73832
+          },
+          {
+            "caller_address": 115976,
+            "caller_file_offset": 115976,
+            "instruction_hex": "851000004e200100",
+            "signed_displacement": 73806
+          },
+          {
+            "caller_address": 127848,
+            "caller_file_offset": 127848,
+            "instruction_hex": "85100000821a0100",
+            "signed_displacement": 72322
+          },
+          {
+            "caller_address": 127904,
+            "caller_file_offset": 127904,
+            "instruction_hex": "851000007b1a0100",
+            "signed_displacement": 72315
+          },
+          {
+            "caller_address": 128048,
+            "caller_file_offset": 128048,
+            "instruction_hex": "85100000691a0100",
+            "signed_displacement": 72297
+          },
+          {
+            "caller_address": 129056,
+            "caller_file_offset": 129056,
+            "instruction_hex": "85100000eb190100",
+            "signed_displacement": 72171
+          },
+          {
+            "caller_address": 129216,
+            "caller_file_offset": 129216,
+            "instruction_hex": "85100000d7190100",
+            "signed_displacement": 72151
+          },
+          {
+            "caller_address": 129928,
+            "caller_file_offset": 129928,
+            "instruction_hex": "851000007e190100",
+            "signed_displacement": 72062
+          },
+          {
+            "caller_address": 140872,
+            "caller_file_offset": 140872,
+            "instruction_hex": "8510000026140100",
+            "signed_displacement": 70694
+          },
+          {
+            "caller_address": 140928,
+            "caller_file_offset": 140928,
+            "instruction_hex": "851000001f140100",
+            "signed_displacement": 70687
+          },
+          {
+            "caller_address": 141072,
+            "caller_file_offset": 141072,
+            "instruction_hex": "851000000d140100",
+            "signed_displacement": 70669
+          },
+          {
+            "caller_address": 142576,
+            "caller_file_offset": 142576,
+            "instruction_hex": "8510000051130100",
+            "signed_displacement": 70481
+          },
+          {
+            "caller_address": 143000,
+            "caller_file_offset": 143000,
+            "instruction_hex": "851000001c130100",
+            "signed_displacement": 70428
+          },
+          {
+            "caller_address": 143160,
+            "caller_file_offset": 143160,
+            "instruction_hex": "8510000008130100",
+            "signed_displacement": 70408
+          },
+          {
+            "caller_address": 159512,
+            "caller_file_offset": 159512,
+            "instruction_hex": "851000000c0b0100",
+            "signed_displacement": 68364
+          },
+          {
+            "caller_address": 159568,
+            "caller_file_offset": 159568,
+            "instruction_hex": "85100000050b0100",
+            "signed_displacement": 68357
+          },
+          {
+            "caller_address": 159712,
+            "caller_file_offset": 159712,
+            "instruction_hex": "85100000f30a0100",
+            "signed_displacement": 68339
+          },
+          {
+            "caller_address": 161200,
+            "caller_file_offset": 161200,
+            "instruction_hex": "85100000390a0100",
+            "signed_displacement": 68153
+          },
+          {
+            "caller_address": 161608,
+            "caller_file_offset": 161608,
+            "instruction_hex": "85100000060a0100",
+            "signed_displacement": 68102
+          },
+          {
+            "caller_address": 161808,
+            "caller_file_offset": 161808,
+            "instruction_hex": "85100000ed090100",
+            "signed_displacement": 68077
+          },
+          {
+            "caller_address": 185472,
+            "caller_file_offset": 185472,
+            "instruction_hex": "851000005ffe0000",
+            "signed_displacement": 65119
+          },
+          {
+            "caller_address": 185888,
+            "caller_file_offset": 185888,
+            "instruction_hex": "851000002bfe0000",
+            "signed_displacement": 65067
+          },
+          {
+            "caller_address": 186032,
+            "caller_file_offset": 186032,
+            "instruction_hex": "8510000019fe0000",
+            "signed_displacement": 65049
+          },
+          {
+            "caller_address": 186728,
+            "caller_file_offset": 186728,
+            "instruction_hex": "85100000c2fd0000",
+            "signed_displacement": 64962
+          },
+          {
+            "caller_address": 187112,
+            "caller_file_offset": 187112,
+            "instruction_hex": "8510000092fd0000",
+            "signed_displacement": 64914
+          },
+          {
+            "caller_address": 187312,
+            "caller_file_offset": 187312,
+            "instruction_hex": "8510000079fd0000",
+            "signed_displacement": 64889
+          },
+          {
+            "caller_address": 540264,
+            "caller_file_offset": 540264,
+            "instruction_hex": "8510000022510000",
+            "signed_displacement": 20770
+          },
+          {
+            "caller_address": 603872,
+            "caller_file_offset": 603872,
+            "instruction_hex": "8510000013320000",
+            "signed_displacement": 12819
+          },
+          {
+            "caller_address": 605416,
+            "caller_file_offset": 605416,
+            "instruction_hex": "8510000052310000",
+            "signed_displacement": 12626
+          },
+          {
+            "caller_address": 609544,
+            "caller_file_offset": 609544,
+            "instruction_hex": "851000004e2f0000",
+            "signed_displacement": 12110
+          },
+          {
+            "caller_address": 612384,
+            "caller_file_offset": 612384,
+            "instruction_hex": "85100000eb2d0000",
+            "signed_displacement": 11755
+          },
+          {
+            "caller_address": 618128,
+            "caller_file_offset": 618128,
+            "instruction_hex": "851000001d2b0000",
+            "signed_displacement": 11037
+          },
+          {
+            "caller_address": 635840,
+            "caller_file_offset": 635840,
+            "instruction_hex": "8510000077220000",
+            "signed_displacement": 8823
+          },
+          {
+            "caller_address": 648624,
+            "caller_file_offset": 648624,
+            "instruction_hex": "85100000391c0000",
+            "signed_displacement": 7225
+          },
+          {
+            "caller_address": 651688,
+            "caller_file_offset": 651688,
+            "instruction_hex": "85100000ba1a0000",
+            "signed_displacement": 6842
+          },
+          {
+            "caller_address": 652072,
+            "caller_file_offset": 652072,
+            "instruction_hex": "851000008a1a0000",
+            "signed_displacement": 6794
+          },
+          {
+            "caller_address": 652784,
+            "caller_file_offset": 652784,
+            "instruction_hex": "85100000311a0000",
+            "signed_displacement": 6705
+          },
+          {
+            "caller_address": 653176,
+            "caller_file_offset": 653176,
+            "instruction_hex": "85100000001a0000",
+            "signed_displacement": 6656
+          },
+          {
+            "caller_address": 700192,
+            "caller_file_offset": 700192,
+            "instruction_hex": "851000000b030000",
+            "signed_displacement": 779
+          },
+          {
+            "caller_address": 700248,
+            "caller_file_offset": 700248,
+            "instruction_hex": "8510000004030000",
+            "signed_displacement": 772
+          },
+          {
+            "caller_address": 700936,
+            "caller_file_offset": 700936,
+            "instruction_hex": "85100000ae020000",
+            "signed_displacement": 686
+          },
+          {
+            "caller_address": 702264,
+            "caller_file_offset": 702264,
+            "instruction_hex": "8510000008020000",
+            "signed_displacement": 520
+          },
+          {
+            "caller_address": 704176,
+            "caller_file_offset": 704176,
+            "instruction_hex": "8510000019010000",
+            "signed_displacement": 281
+          }
+        ],
+        "relocated_code_pointers": []
+      },
+      "end_evidence": {
+        "direct_calls": [
+          {
+            "caller_address": 651880,
+            "caller_file_offset": 651880,
+            "instruction_hex": "85100000cd1a0000",
+            "signed_displacement": 6861
+          },
+          {
+            "caller_address": 652264,
+            "caller_file_offset": 652264,
+            "instruction_hex": "851000009d1a0000",
+            "signed_displacement": 6813
+          }
+        ],
+        "relocated_code_pointers": []
+      },
+      "complete_inferred_window": true,
+      "loader_relocation_overlaps": []
+    }
+  ],
+  "linux_negatives": [
+    {
+      "names": [
+        "_ZN4core3ptr74drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$2$u5d$$GT$17h3247e3a473350369E"
+      ],
+      "start": 32584,
+      "bytes": 272,
+      "raw_sha256": "8c8933c2b016bdc1b29ee506cc83a79f850697d3506f04f9304eafb8d6b37137"
+    },
+    {
+      "names": [
+        "_ZN4core3ptr74drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$4$u5d$$GT$17h4ee4ac382cd491c4E"
+      ],
+      "start": 33256,
+      "bytes": 528,
+      "raw_sha256": "cc07f3687d59b705cff2866026703c3bb4c393544254642191e45bd780fca8a7"
+    },
+    {
+      "names": [
+        "_ZN4core3ptr75drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$16$u5d$$GT$17h94126b7c524a939cE"
+      ],
+      "start": 33784,
+      "bytes": 200,
+      "raw_sha256": "6ec1eacc727448cde1084ff1ef624696f3709c4e1bae6f6463f8ca4836aac284"
+    },
+    {
+      "names": [
+        "_ZN4core3ptr75drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$18$u5d$$GT$17h464f3dd1ab291c40E"
+      ],
+      "start": 33984,
+      "bytes": 200,
+      "raw_sha256": "7060fd5580d7051cbc5b513a69bc652e2069a5f4c827caf81b171c7d06db82a6"
+    },
+    {
+      "names": [
+        "_ZN4core3ptr75drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$23$u5d$$GT$17h885f03848088f044E"
+      ],
+      "start": 34184,
+      "bytes": 200,
+      "raw_sha256": "606c931aa247e0fb057098d2cf6358e57f47b8e830faf4d685efd075b426874b"
+    },
+    {
+      "names": [
+        "_ZN4core3ptr75drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$25$u5d$$GT$17hc3172196e4c118ccE"
+      ],
+      "start": 34384,
+      "bytes": 200,
+      "raw_sha256": "9f876595bb544525cc6d52143de740044f78ebdf41070c2792f799e2dfbb7d8e"
+    },
+    {
+      "names": [
+        "_ZN4core3ptr75drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$26$u5d$$GT$17h9d1d463cdb6becc4E"
+      ],
+      "start": 34584,
+      "bytes": 200,
+      "raw_sha256": "644119767089f726d848de472a6472a0f41549a174de5b324c4de5057500c000"
+    },
+    {
+      "names": [
+        "_ZN4core3ptr75drop_in_place$LT$$u5b$solana_account_info..AccountInfo$u3b$$u20$27$u5d$$GT$17h60aaa3cc3e056da2E"
+      ],
+      "start": 34784,
+      "bytes": 200,
+      "raw_sha256": "79161cbd83186624504d6a2f7b964f73b70ad6aba5c1471ead33d603f6e56a3c"
+    },
+    {
+      "names": [
+        "_ZN5alloc7raw_vec11finish_grow17h29045e2554aac417E"
+      ],
+      "start": 39056,
+      "bytes": 680,
+      "raw_sha256": "c17c3c6b1662d67be0d1da7d526a1bfc1e8baf5917c0ce4c71604bd5421bb108"
+    },
+    {
+      "names": [
+        "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$8grow_one17hb1239bbd272beed0E"
+      ],
+      "start": 501000,
+      "bytes": 280,
+      "raw_sha256": "b01e320c8c093866a5e1f4e0caa00f9b0f89e8535ee87cc46099fa23e40cac74"
+    }
+  ],
+  "linux_artifact_verification": {
+    "scope": "Retained artifact verification only; no new build or runtime execution",
+    "candidate_sha256": "e59f9f970813102e04327ce0502f8359dd217cfaebec942172614ab84dd6ac88",
+    "candidate_bytes": 599776,
+    "source_files": 14,
+    "locked_registry_packages": 215,
+    "original_location_raw_payload_equal": true,
+    "location_path_bytes": 85,
+    "whole_original_comparison": {
+      "reference_sha256": "a87fa9f866272514e6acb852b668c4a08aeb173d56c883039991d114d1199bdb",
+      "candidate_sha256": "e59f9f970813102e04327ce0502f8359dd217cfaebec942172614ab84dd6ac88",
+      "reference_bytes": 777408,
+      "candidate_bytes": 599776,
+      "differing_shared_positions": 323297,
+      "length_difference": -177632,
+      "first_difference": 24,
+      "full_byte_equality": false
+    },
+    "selected_darwin_comparison": {
+      "reference_sha256": "ca5d4f54b14e2f67c4eca56fcac29b54801906cecf23c463801916fd9d6b6621",
+      "candidate_sha256": "e59f9f970813102e04327ce0502f8359dd217cfaebec942172614ab84dd6ac88",
+      "reference_bytes": 599784,
+      "candidate_bytes": 599776,
+      "differing_shared_positions": 47115,
+      "length_difference": -8,
+      "first_difference": 40,
+      "full_byte_equality": false
+    },
+    "section_differences_vs_darwin": {
+      ".text": 15310,
+      ".rodata": 14988,
+      ".data.rel.ro": 373,
+      ".dynamic": 4,
+      ".dynsym": 0,
+      ".dynstr": 0,
+      ".rel.dyn": 497,
+      ".shstrtab": 0
+    },
+    "historical_uploader_recipe": null
+  },
+  "recorded_source_inputs_equal": 14,
+  "linux_builds_executed_here": 0,
+  "target_executions": 0,
+  "selected_artifacts_changed": false,
+  "scope": "Two retained full-distribution recipes; not compiler-only or sysroot-only causality."
+}

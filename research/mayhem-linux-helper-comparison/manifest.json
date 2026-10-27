@@ -1,0 +1,37 @@
+[
+  {
+    "path": "compare.py",
+    "bytes": 13010,
+    "sha256": "636cf29c8b2240e2b68f9ead2bd03adf28d242403ede18b46dc0353450115bf0"
+  },
+  {
+    "path": "comparison.json.gz",
+    "bytes": 145186,
+    "sha256": "07c5d69b45e2277f0fee0eb74751b67fc1fab105368c4288077cb26b88c32034"
+  },
+  {
+    "path": "findings.json",
+    "bytes": 65799,
+    "sha256": "d91f73c1a12afe45f2b1de129b0d8c8ef14dc0abb9f0631cdd1c4cdcab7eb93b"
+  },
+  {
+    "path": "inputs.json",
+    "bytes": 19250,
+    "sha256": "ec8bec0a29c4f3bb237fbc8936fa7991a8bba95e684b0a5d56f534edd92436ce"
+  },
+  {
+    "path": "README.md",
+    "bytes": 7767,
+    "sha256": "cac435a6a362b17dc2df3b625d95ccb728bb347cb1ec97cbb2a7bcfc0fbb5589"
+  },
+  {
+    "path": "test_comparison.py",
+    "bytes": 9626,
+    "sha256": "fb7e7b675f758b943a627649c2a653116b1a120455b11a53783872c11dd412de"
+  },
+  {
+    "path": "verify.py",
+    "bytes": 2254,
+    "sha256": "49188db6f9ca4a7ebffa42450a353b897a71d371e4c1ef9a0e2380cea19ff495"
+  }
+]

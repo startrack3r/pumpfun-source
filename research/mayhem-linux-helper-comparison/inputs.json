@@ -1,0 +1,431 @@
+{
+  "revision": "355dbe06d3c5d9eb16227516bcbe2303d6a80e05",
+  "files": [
+    {
+      "path": "repro/mayhem/linux-v154-recovery/README.md",
+      "bytes": 9913,
+      "sha256": "e219f0ca715177d26736fe52d8b8489aec9528ae8e8f49309f843a1c9a46eed1",
+      "git_blob": "99b887d6ac24f0cc7fe3dd3c535a86e38d1c5207"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/evidence.py",
+      "bytes": 5850,
+      "sha256": "86a58255d17c262e51b3ce1edfa6cb6e3193bb1c1d981411c56031feb61ea30d",
+      "git_blob": "f638b28c62d6092f8c7c7c025ae506d63051a6c8"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/inputs.json",
+      "bytes": 3835,
+      "sha256": "f7a141ef09a60c773db988ebe5b07eb7a51d6d9c0da9c807cd901550a9ced20d",
+      "git_blob": "a6b9fa43822ffd259bdb42e5071f3fe74aa5a86f"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/locations.json",
+      "bytes": 1733,
+      "sha256": "cafa749efa65e86c03a6b651f7c30dafd516d51f19ff56b34a5783cb6b003c17",
+      "git_blob": "19d43a84dcff3315eca17b3309aca8f4069d22ba"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/manifest.json",
+      "bytes": 10795,
+      "sha256": "7f9ed6483d4f9619939ab70bccc5e95b022e6e12ac9695d5e3961a9610535cec",
+      "git_blob": "97360a8585faf35a083963b3d994781fda029ba0"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/artifact-members.json",
+      "bytes": 7127,
+      "sha256": "151d0ffcefd7767107a97cf75cbfc412c9823fa2917e82b9c6a585a4795ca16e",
+      "git_blob": "184aad0f274eb04d9e08dd3c89b2816e15983f87"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/hosted-job.log",
+      "bytes": 21018,
+      "sha256": "6e9daa74ade3588612232d4a541f20b8eb4fc3222e0936b28111b659ffbdc788",
+      "git_blob": "25712b5aa6913a8c54d194dd392339bca304ec20"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/hosted.json",
+      "bytes": 733,
+      "sha256": "bc7bfca0e0f83bd7c15b98d7e62d6a2d40141395f71646e0afe75367b5b7a55b",
+      "git_blob": "0dc9fb35e2f56df88e26b2a90c6d7cec65c60bde"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/candidate.so",
+      "bytes": 599776,
+      "sha256": "e59f9f970813102e04327ce0502f8359dd217cfaebec942172614ab84dd6ac88",
+      "git_blob": "5ad2674fbe7ed21be3aeb7b189fe34ed0a7170a2"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/cargo-version.log",
+      "bytes": 305,
+      "sha256": "98930289e230c1e1b8938df7d7dd6f43758fc2040101c8e1b89dfebf3a832d7e",
+      "git_blob": "edecbbd1a6ab0bf5490b3a280d73cb0cf2145a0a"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/commands.json",
+      "bytes": 11349,
+      "sha256": "f679e4e8199dc1abced357fc136644ed964ff3a9c0b34e0dbc5d82d313a5e538",
+      "git_blob": "710d8466cf761f4529355efff099ceb78813bf00"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/compile.log",
+      "bytes": 247014,
+      "sha256": "4f5f4725f1f171f60d639391c53017949a2aea14e44fd355f8f361ccd9a8259e",
+      "git_blob": "0bd1b8e5e1dd70bbeed04dfda3241f94401885d8"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/compiled-location.json",
+      "bytes": 800,
+      "sha256": "23213b2d820b06c0679151cbd1c1ca2869971d9d312fbef04cffd31757951b2e",
+      "git_blob": "a5a0aa92c5fed5003f788a55adfd1c41af3a4396"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/compiler-version.log",
+      "bytes": 145,
+      "sha256": "bd581b2380526757cc42110f27d35db1d3577f0840092aeefca19adc727155d7",
+      "git_blob": "85534482030b37e0b72663d54cca23c6d0dc83c9"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/compiler.tar.bz2.receipt.json",
+      "bytes": 378,
+      "sha256": "eb0dfd09c647c0ed01bcd0be1ed21194b286411db70d2c346edb6eef2916a39e",
+      "git_blob": "71aa373a1fc3aa3c99eea4acd978e958a288a43d"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/driver-bindings.json",
+      "bytes": 371,
+      "sha256": "c77116be0f75dcf312dbded631dd5dbd2c00ef514b86f100b7a18cb81658afc1",
+      "git_blob": "3ba413badbcbcac6fe7948bce687bccec3c7299c"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/driver/evidence.py",
+      "bytes": 5850,
+      "sha256": "86a58255d17c262e51b3ce1edfa6cb6e3193bb1c1d981411c56031feb61ea30d",
+      "git_blob": "f638b28c62d6092f8c7c7c025ae506d63051a6c8"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/driver/inputs.json",
+      "bytes": 3835,
+      "sha256": "f7a141ef09a60c773db988ebe5b07eb7a51d6d9c0da9c807cd901550a9ced20d",
+      "git_blob": "a6b9fa43822ffd259bdb42e5071f3fe74aa5a86f"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/driver/run.py",
+      "bytes": 16856,
+      "sha256": "b2c0537c5336abc26d17e643281895a39aee03b94a3be9282c00e3a197f2067b",
+      "git_blob": "3bf622d3e35d6928922c40ccf501b479a22b45a8"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/host-linker-version.log",
+      "bytes": 245,
+      "sha256": "3e8cc208c40f60832f67377aa1b03c3e7e858f20cd5d365464944700c0bd7ad1",
+      "git_blob": "c68ff7d76b3cfb74af25f223a3a9dd4911890671"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/host.json",
+      "bytes": 483,
+      "sha256": "e7f34d431b4519e3216043010f2e11a2b91f7c5c16cd7452085d270adc88e567",
+      "git_blob": "ee329092c011878001c2dd3584c70861923993e0"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/input-pins.json",
+      "bytes": 3835,
+      "sha256": "f7a141ef09a60c773db988ebe5b07eb7a51d6d9c0da9c807cd901550a9ced20d",
+      "git_blob": "a6b9fa43822ffd259bdb42e5071f3fe74aa5a86f"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/locked-fetch.log",
+      "bytes": 7559,
+      "sha256": "a890dba069cfd2ffcfa022afcde613e22161c51ad933fefac4aa1d28b7f34b25",
+      "git_blob": "33870d26c0ac7f6e87d9f9e967247825cccf401a"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/manifest.json",
+      "bytes": 6437,
+      "sha256": "aa341098d00ec1f1e4fc9d55613b0fdf51e61c21a52bcdb4047a21b29c4444ba",
+      "git_blob": "51c7af08b5979f31cedd0335aa0cbf6d40dc7083"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/original-location.json",
+      "bytes": 558,
+      "sha256": "7f17cb877a6f5724af5fa10a921f6849d91f93492d5c4815ace797be7ef61109",
+      "git_blob": "48f69a461b5306b3aed43dbab7669405fd2262c8"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/produced-outputs.json",
+      "bytes": 258,
+      "sha256": "15c58c393a0f3b8dc18528d67b5fd6067ce5dd8d1d260823bc586398dc297649",
+      "git_blob": "a4860a1f565160f54594afda852af138c468523f"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/registry-after.json.gz",
+      "bytes": 274696,
+      "sha256": "eaccca59fe252b022bd76c20d8f7a5736b0d0993b254ca842df7444831727d88",
+      "git_blob": "5fda3de595a388205b5a0bff4aece21800e157c8"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/registry-before.json.gz",
+      "bytes": 274696,
+      "sha256": "eaccca59fe252b022bd76c20d8f7a5736b0d0993b254ca842df7444831727d88",
+      "git_blob": "5fda3de595a388205b5a0bff4aece21800e157c8"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/result.json",
+      "bytes": 668,
+      "sha256": "153999840305e7d655a90976fc3a8698db4e693faabed26c00601c550741e86d",
+      "git_blob": "232d3ecd95b312a233d5034bbe082186c0aabc19"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/selected-darwin-comparison.json",
+      "bytes": 364,
+      "sha256": "e9334f80fccdd2d34c1824b0d7005f2c53ced6e7c559eb07798b29e8d5efcbb5",
+      "git_blob": "2bed815bdb874e1db4e4e134bfc46563a7a74351"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source-after-compile.json",
+      "bytes": 2125,
+      "sha256": "f8df56ad5bed5abed51b62eb0f2ff395eef2e46824eb0741208800ea29e59777",
+      "git_blob": "446dffd391e130c47f480caea17ec2ac325c800a"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source-after.json",
+      "bytes": 2125,
+      "sha256": "f8df56ad5bed5abed51b62eb0f2ff395eef2e46824eb0741208800ea29e59777",
+      "git_blob": "446dffd391e130c47f480caea17ec2ac325c800a"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source-before.json",
+      "bytes": 1576,
+      "sha256": "0d0c81296f0ec134b1a6420862c6ce177e2e98edfa44569a38ffabbeaa439fdf",
+      "git_blob": "d7f1b9bb25dc76bbff3cb93628488bc5f3620dea"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source/programs/mayhem/Cargo.lock",
+      "bytes": 57423,
+      "sha256": "03c991d636c42f72dda4e72e7aa5344ae8cba80aff672ec601d7176e596049b3",
+      "git_blob": "0787e0976eb394674c863a7c67a67b1ebf214344"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source/programs/mayhem/Cargo.toml",
+      "bytes": 642,
+      "sha256": "7745554bb59a2ba6d4daae31ccebcda50a75bcdba23251fe73a42e0c11fb7967",
+      "git_blob": "60d602837cf6f0c55a2685cf67e7b94e86b4a6e3"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source/programs/mayhem/src/checked_program.rs",
+      "bytes": 3665,
+      "sha256": "fbf8eeaec04bc5ac5534b4a375f221fd8c3787a9a443e63d332ecc0a6395b7fb",
+      "git_blob": "266406b2cfb797c7da4650574ef13e3f210257f1"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source/programs/mayhem/src/instructions/burn.rs",
+      "bytes": 3846,
+      "sha256": "cb287a0009a1195efd5bdac08c5042a26dfc68d71a9a46c54c275453a11fd367",
+      "git_blob": "071a9cc964bf63e3ad5fe737c5e494f397a18ce4"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source/programs/mayhem/src/instructions/buy.rs",
+      "bytes": 8964,
+      "sha256": "10a99ac5097a2cd8faee56a1a7baa3a8115c59baf37737f1c1336febb1693bf0",
+      "git_blob": "b661a2fe34d7bc290e88c1e822ddf673b15762ad"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source/programs/mayhem/src/instructions/buy_pump_swap.rs",
+      "bytes": 12591,
+      "sha256": "d824aa4129b4645ac4e60fe9a0f9d827f173965c9dec1e631114ec076bff0801",
+      "git_blob": "b61a132b2bee029fbe94e4252c705151ed97b6bd"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source/programs/mayhem/src/instructions/buy_v2.rs",
+      "bytes": 10904,
+      "sha256": "e76d57d6eca28de9c1164a856ce15f303bf160f5920f31a63ac34b4598255daf",
+      "git_blob": "fb612d2fdf8b2e5a4548dc8eac41365955de4a1e"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source/programs/mayhem/src/instructions/mod.rs",
+      "bytes": 153,
+      "sha256": "da69605543cf37e3508c931529df76b4319755f73ec10c6110c3b5f2419cce4c",
+      "git_blob": "368d9adef9ccac4c4425a075c44eec94a21aa1a9"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source/programs/mayhem/src/instructions/pump_swap_types.rs",
+      "bytes": 4786,
+      "sha256": "9c37cb187c6225fdd6ef4f521f2ac6d794598828e7594b20628cd05631c129d5",
+      "git_blob": "50fd1d94bc0c692b0ba634b6d3adddce3105bd6b"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source/programs/mayhem/src/instructions/sell.rs",
+      "bytes": 9737,
+      "sha256": "fd9263e97aa01f3394165297844286509094d87f38019c5df7c4a4e64b4fef64",
+      "git_blob": "f7e0d64bc061b3157f325c9aa5ae652ac39d8f63"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source/programs/mayhem/src/instructions/sell_pump_swap.rs",
+      "bytes": 10987,
+      "sha256": "2bf58880030a7859b8eaafcef3ddfde9ae0d7769a01c7dc54d8ba6805d1def31",
+      "git_blob": "4bdad29a8ba17fa6196ad75c514cfe42d30e0a5e"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source/programs/mayhem/src/instructions/sell_v2.rs",
+      "bytes": 9970,
+      "sha256": "e7b64a1f67e13026b6962a5fc229e39546939d0e701e9d4d1d6114713aea5f15",
+      "git_blob": "9055a493bcd62c95196527f2a702119084b8f133"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source/programs/mayhem/src/lib.rs",
+      "bytes": 23707,
+      "sha256": "def14c8135f370f8657b327c2bc2da3f8802ef3223778ad29b51958ba89c3649",
+      "git_blob": "b579fbd3e530cb3fc728a93ffd63801c03fa5b37"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/source/programs/mayhem/src/state.rs",
+      "bytes": 1482,
+      "sha256": "6da988a2efbf673e87465a21f38fe0b42b919948fe34c552755d02ee352658f2",
+      "git_blob": "7fc0dbe9a230c0bb5cc907846c8aa9e92d432947"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/strip.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/stripper-version.log",
+      "bytes": 117,
+      "sha256": "04214b0a6f1a0cd056b44862aa0368d3c6563581545a1bc10699c36b89dc84ee",
+      "git_blob": "a6ede8dcb320834bd1134b8c6a817021e24569fe"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/stripper.tar.bz2.receipt.json",
+      "bytes": 378,
+      "sha256": "4e2ccf8fb4434e7bbcdfe956a6d7c90ec55243b77b237499c196255870350679",
+      "git_blob": "206163da05259cdee799643a1fcd86eff3100b4a"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/target-cfg.log",
+      "bytes": 862,
+      "sha256": "b5f8c8f185d4edb3033f13231ac5d70fa6e9413a23d741c9699d0ea8f6cd0e86",
+      "git_blob": "f0e293e1cf239cce4adfad6ec9237fecace8312d"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/tools-after.json.gz",
+      "bytes": 305377,
+      "sha256": "ffa9797af2bcd8bd37f5b7c79251bf9a2914aa97e9d045c6c13ed4405d44fef0",
+      "git_blob": "bde34dd430ca6e3c9a3b0e31770f9a0cf7f10a19"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/tools-before.json.gz",
+      "bytes": 305377,
+      "sha256": "ffa9797af2bcd8bd37f5b7c79251bf9a2914aa97e9d045c6c13ed4405d44fef0",
+      "git_blob": "bde34dd430ca6e3c9a3b0e31770f9a0cf7f10a19"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/unstripped.so",
+      "bytes": 720352,
+      "sha256": "9a3d7ed93fd47670ef48c36cb3540fa6847906c9292fc138f302ca1a1aedf2bd",
+      "git_blob": "a6f8bcd2a75b1d5018732374453790cf8c759a0a"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/results/run-40293434354/whole-original-comparison.json",
+      "bytes": 370,
+      "sha256": "6a1e9e057e85eeabdd73a119d002c180259abc76811d4634a22b237bf12f1c41",
+      "git_blob": "d16f6cdaf3a75695a4e935e23834c6056b142380"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/run.py",
+      "bytes": 16856,
+      "sha256": "b2c0537c5336abc26d17e643281895a39aee03b94a3be9282c00e3a197f2067b",
+      "git_blob": "3bf622d3e35d6928922c40ccf501b479a22b45a8"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/test_guards.py",
+      "bytes": 4863,
+      "sha256": "903bc97301c86af6e6054b05c9de0e734416bd5f7ec87a2ad20f72eb7d79587a",
+      "git_blob": "83680e23e3c79af7203a6a3430407f94c813a1ea"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/test_saved.py",
+      "bytes": 3829,
+      "sha256": "4c9cf35c4892ff637a7c627cc59c488518c1748435ebcf64987fbb8492a0ae92",
+      "git_blob": "58a043163a03273ea23f70b4b8a6b45c71a2d0f5"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/upstream-check.json",
+      "bytes": 6733,
+      "sha256": "dc722233e5ce4047949013b5e4718113c9ad93460f31a0f7e9a302a9ab3b13a7",
+      "git_blob": "af807ab2f05e1059e5b1cd10a83db8c91dc847b5"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/verify_inputs.py",
+      "bytes": 4101,
+      "sha256": "3ce983c4c0a30928d59192313ee17037c686d413e1bec2057de8db2588194058",
+      "git_blob": "0eafc7d06add26aff6d7f5d7b0553ca8225b8e84"
+    },
+    {
+      "path": "repro/mayhem/linux-v154-recovery/verify_saved.py",
+      "bytes": 9742,
+      "sha256": "c6ab20666e118418cf2d6048d8a37e838048b081d9492ff69b0fbed341a14fa6",
+      "git_blob": "1f1bde23cdc46787dd394f886e59e25672a3936c"
+    },
+    {
+      "path": "evidence/original/mayhem/deployed.so",
+      "bytes": 777408,
+      "sha256": "a87fa9f866272514e6acb852b668c4a08aeb173d56c883039991d114d1199bdb",
+      "git_blob": "b0aac22b32bc95dca13d4ec8aecb625f4faaba28"
+    },
+    {
+      "path": "repro/identity-audit/2026-10-25/mayhem-v154/build-01/candidate.so",
+      "bytes": 599784,
+      "sha256": "ca5d4f54b14e2f67c4eca56fcac29b54801906cecf23c463801916fd9d6b6621",
+      "git_blob": "a46b4eda90ef2c715ef14b06e8ff3ac453d3814e"
+    },
+    {
+      "path": "repro/identity-audit/2026-10-25/mayhem-v154/build-01/unstripped.so",
+      "bytes": 720352,
+      "sha256": "f9de20e991c9e14e77f2d9cded7da9c2dff892353f06f7c6f00ea18bfa8e911e",
+      "git_blob": "282f8d97871b5000f8757d60447a26a063d96377"
+    },
+    {
+      "path": "repro/identity-audit/2026-10-25/mayhem-v154/helper-results.json",
+      "bytes": 3304695,
+      "sha256": "a7af54413e9cac5991f2cc15e99088a6b8711265da66b9a3dde4210f01587be3",
+      "git_blob": "d1ac91115d550b61b4db06d71fb2b1a0f69504f1"
+    },
+    {
+      "path": "repro/identity-audit/2026-10-25/mayhem-v154/match_helpers.py",
+      "bytes": 8589,
+      "sha256": "56154c09308a8d8946250e614946f338e1ab04206f1c6f19e7fff99adfc38567",
+      "git_blob": "69957f00e1936d0e2947c816dfd48295cd626ae3"
+    },
+    {
+      "path": "repro/identity-audit/2026-10-25/mayhem-v154/reference-v1461-matcher.py",
+      "bytes": 7437,
+      "sha256": "0510947b2e727b8b92d43e1b74cb661863628a344f2cb0d9cbf82a7ffc2f5c05",
+      "git_blob": "76b5574c12bd4232d055ff83b9c270c43cd3c16b"
+    },
+    {
+      "path": "repro/identity-audit/2026-10-25/mayhem-v154/frozen-source.json",
+      "bytes": 1352,
+      "sha256": "d2a693c753ed983a0bbc454baf180fb058a195825c1f79394b3f66a874962962",
+      "git_blob": "a8bd01319a39d5d1b73ad428e5971ba3aa5247bd"
+    },
+    {
+      "path": "repro/mayhem/compiler-v154-main/main/candidate.so",
+      "bytes": 599784,
+      "sha256": "ca5d4f54b14e2f67c4eca56fcac29b54801906cecf23c463801916fd9d6b6621",
+      "git_blob": "a46b4eda90ef2c715ef14b06e8ff3ac453d3814e"
+    },
+    {
+      "path": "research/mayhem-sysroot-object-provenance/elf.py",
+      "bytes": 7044,
+      "sha256": "0de5cfee8f114df50c82596de110e129e03149cc64f759d63813ea69661adbf5",
+      "git_blob": "27a484f210c79c27bb119bda6dee9526a05f796e"
+    },
+    {
+      "path": "research/mayhem-sysroot-object-provenance/analyze.py",
+      "bytes": 8738,
+      "sha256": "2b412aeeb56feb4e6b7bb2e6782ad681d6994180e1374bae4d45acfca4918d57",
+      "git_blob": "fc8966138d74f8ee2ab1b1821837d81717dec28b"
+    }
+  ]
+}

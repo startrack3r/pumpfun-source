@@ -1,0 +1,11 @@
+--- a/programs/pump-fees/src/lib.rs
++++ b/programs/pump-fees/src/lib.rs
+@@ -18,7 +18,7 @@
+ mod pump_global;
+ mod types;
+ mod state;
+-mod instructions;
++pub mod instructions;
+ use contexts::*;
+ use types::*;
+ 

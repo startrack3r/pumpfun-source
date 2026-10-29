@@ -19,10 +19,37 @@ def machine_blocks(text):
             for i, m in enumerate(headers)}
 
 
+def ir_borrow_order(text):
+    calls = list(re.finditer(r'^  (?:tail )?call void @_ZN19solana_account_info11AccountInfo15try_borrow_data', text, re.M))
+    require(len(calls) == 1, 'IR borrow call census')
+    labels = list(re.finditer(r'^([\w.$-]+):[^\r\n]*', text, re.M))
+    j = max(j for j, label in enumerate(labels) if label.start() < calls[0].start())
+    label, following = labels[j], labels[j + 1]
+    body = text[label.start():following.start()]
+    cmp = re.search(r'(%\d+) = icmp (eq|ne) i64 [^\r\n]*, ' + SENTINEL, body)
+    require(cmp is not None, 'IR borrow sentinel comparison')
+    branch = re.search(r'br i1 ' + re.escape(cmp[1]) + r', label %(\d+), label %(\d+)', body)
+    if branch:
+        success = branch[1 if cmp[2] == 'eq' else 2]
+        form = 'direct-' + cmp[2]
+    else:
+        select = re.search(r'(%\d+) = select i1 ' + re.escape(cmp[1]) + r', i64 (\d+), i64 (\d+)', body)
+        require(select is not None, 'IR select/switch predicate')
+        require('switch i64 ' + select[1] + ',' in body, 'IR switch consumes selected discriminant')
+        value = select[2 if cmp[2] == 'eq' else 3]
+        target = re.search(r'i64 ' + value + r', label %(\d+)', body)
+        require(target is not None, 'IR select/switch successor')
+        success = target[1]
+        form = 'select-switch-' + cmp[2]
+    return dict(borrow_block=label[1], next_block=following[1], success_block=success,
+                form=form, success_is_next=(success == following[1])), body, text[following.start():labels[j + 2].start()]
+
+
 def analyze(raw):
     headers = list(HEADER.finditer(raw))
     snapshots = []
     machine = []
+    ir_orders = []
     for i, m in enumerate(headers):
         end = headers[i + 1].start() if i + 1 < len(headers) else len(raw)
         body = raw[m.start():end]
@@ -38,8 +65,21 @@ def analyze(raw):
                     f'borrow predicate at snapshot {i}')
             row.update(block_count=len(blocks), borrow_branch=branch[0])
             machine.append((row, blocks, borrow[0]))
+        else:
+            order, body, following = ir_borrow_order(text)
+            row['ir_borrow_order'] = order
+            ir_orders.append((row, body, following))
         snapshots.append(row)
     require(len(snapshots) == 392 and len(machine) == 116, 'complete snapshot census')
+    require(len(ir_orders) == 276 and
+            [r['ir_borrow_order']['success_is_next'] for r, _, _ in ir_orders] == [False] * 17 + [True] * 259,
+            'IR success-adjacency boundary')
+    earlier, before_body, before_following = ir_orders[16]
+    later, after_body, after_following = ir_orders[17]
+    require('Before SimplifyCFGPass' in earlier['header'] and 'After SimplifyCFGPass' in later['header'],
+            'IR adjacency change pass')
+    require([line.strip() for line in before_following.splitlines()[1:] if line.strip()] == ['br label %313'],
+            'pre-SimplifyCFG intervening forwarding block')
     first, blocks, borrow = machine[0]
     require(first['index'] == 276 and '(finalize-isel)' in first['header'] and 'Before' in first['header'],
             'first captured machine stage')
@@ -69,6 +109,8 @@ def analyze(raw):
             '$r6 = LDD_V1 $r10, -1304' in selected[-1]['block62'], 'placed shared reload')
     return dict(raw_bytes=len(raw), raw_sha256=hashlib.sha256(raw).hexdigest(),
                 snapshot_count=len(snapshots), machine_snapshot_count=len(machine),
+                ir_adjacency_boundary=dict(before=dict(**earlier, borrow_body=before_body, following_block=before_following),
+                                           after=dict(**later, borrow_body=after_body, following_block=after_following)),
                 last_ir=dict(**preceding, borrow_block=ir_borrow),
                 first_machine=dict(**first, borrow_block=borrow,
                                    equality_successor=blocks[25], inequality_successor=blocks[26]),

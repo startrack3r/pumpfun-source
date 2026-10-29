@@ -7,6 +7,13 @@ candidate's branch-polarity boundary to the interval between those observations;
 it does **not** identify an individual instruction-selection operation or explain
 the original build. All 116 machine snapshots retain the inequality branch.
 
+An earlier boundary is visible in the same capture: the borrow-success block
+first becomes the next IR block after the first recorded **SimplifyCFGPass**.
+Before that pass, a forwarding block sits between the borrow block and success.
+Success remains adjacent in every subsequent IR snapshot. This is an observed
+block-order transition, not a claim that a particular original compiler flag or
+source spelling produced the captured deployment.
+
 This packet is a passive compiler observation and two rejected controls. It
 changes no maintained Rust source, selected recipe, coverage count or acceptance
 gate. The original and selected meaningful ELF remain unequal.
@@ -51,6 +58,8 @@ relevant blocks. Snapshot numbers are zero-based and local to this capture.
 
 | Observation | Recorded predicate / tail |
 | --- | --- |
+| 16: before first SimplifyCFGPass | Borrow block 337, next block 341 (forwarding), success block 342; select/switch predicate |
+| 17: after first SimplifyCFGPass | Borrow block 335, next/success block 338; direct equality branch |
 | 275: after Module Verifier, last captured LLVM IR | `%227 = icmp eq i64 %226, -9223372036854775782`; `br i1 %227, label %232, label %236` |
 | 276: before Finalize ISel, first captured machine code | `JNE_rr %18:gpr, killed %191:gpr, %bb.26`; `JMP %bb.25` |
 | Machine successor identities | `bb.25` is IR block 232 (success); `bb.26` is IR block 236 (ProgramError conversion) |
@@ -62,6 +71,9 @@ At sell-relative `0xd00`, the captured original literally contains
 `5d32c90000000000` (JNE). The verifier checks these original bytes, the candidate
 bytes, the actual-successor identities in the first machine snapshot and the
 last IR predicate. It also handles slot-index-prefixed machine block headers.
+All 276 IR dumps are parsed: the first 17 have non-adjacent success, and the
+remaining 259 have adjacent success. The original bytes are not compiler IR and
+do not tell us whether that same transition occurred in the original build.
 
 The late cleanup-tail transformation and the earlier polarity boundary are
 distinct observations. Neither licenses rewriting emitted instructions, treating

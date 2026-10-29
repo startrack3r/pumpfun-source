@@ -36,7 +36,7 @@ class RecordedBoundaryTests(unittest.TestCase):
 
     def test_ir_polarity_corruption_rejected(self):
         raw = self.mutate(self.report['last_ir'], b'%227 = icmp eq', b'%227 = icmp ne')
-        with self.assertRaisesRegex(ValueError, 'IR equality'):
+        with self.assertRaisesRegex(ValueError, 'IR equality|IR success-adjacency boundary'):
             analyze.analyze(raw)
 
     def test_successor_identity_corruption_rejected(self):
@@ -47,6 +47,12 @@ class RecordedBoundaryTests(unittest.TestCase):
     def test_truncated_capture_rejected(self):
         with self.assertRaises(ValueError):
             analyze.analyze(self.raw[:self.report['snapshots'][-1]['offset']])
+
+    def test_earlier_adjacency_claim_rejected(self):
+        before = self.report['ir_adjacency_boundary']['before']
+        raw = self.mutate(before, before['following_block'].encode(), b'')
+        with self.assertRaisesRegex(ValueError, 'IR success-adjacency boundary'):
+            analyze.analyze(raw)
 
 
 if __name__ == '__main__':

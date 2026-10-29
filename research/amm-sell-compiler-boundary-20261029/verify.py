@@ -167,4 +167,4 @@ if __name__ == '__main__':
     result = verify()
     if args.report:
         args.report.write_bytes((json.dumps(result, indent=2) + '\n').encode())
-    print('PASS: 68/69 input hashes; five outputs; 219 compiler invocations; 392 dumps; 116 JNE machine snapshots; exact match sets and rejected-control losses. No target execution.')
+    print('PASS: 68/69 input hashes; five outputs; 219 compiler invocations; 276 IR adjacency checks; 116 JNE machine snapshots; exact match sets and rejected-control losses. No target execution.')
